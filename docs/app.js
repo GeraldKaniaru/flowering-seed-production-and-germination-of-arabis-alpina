@@ -16,7 +16,7 @@ if (typeof document !== 'undefined') {
  const $ = id => document.getElementById(id);
  const state = {category:'all', query:'', type:'', history:'current', page:0};
  const pageSize = 30;
- const repository = 'https://github.com/GeraldKaniaru/arabis-alpina-analysis';
+ const repository = 'https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina';
  let files = [];
  const stages = [
  ['01','Study area','Map the study area, source plots and environmental context.','01_study_area.R','Context'],
