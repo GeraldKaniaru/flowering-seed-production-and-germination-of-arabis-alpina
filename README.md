@@ -34,3 +34,9 @@ Run `Publish-Updates.cmd` from your working analysis folder to publish saved cha
 ## November 2026 update
 
 [Download the 15 November update ZIP](https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/releases/download/analysis-update-20261115/analysis-updates-20261115.zip). Extract it over the complete snapshots to apply the revised scripts, figures, and tables. The figures are numbered according to the 15 November manuscript.
+
+## Supplementary methods and diagnostics
+
+- [Open the supplementary analysis report](https://geraldkaniaru.github.io/flowering-seed-production-and-germination-of-arabis-alpina/supplementary-methods.html)
+- [Download the supplement and diagnostics update](https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/releases/download/analysis-update-20261115-supplement/analysis-supplement-and-diagnostics.zip) and extract it after the November update.
+- To rebuild the report from the analysis root, run `source("scripts/rmarkdown.R")`.

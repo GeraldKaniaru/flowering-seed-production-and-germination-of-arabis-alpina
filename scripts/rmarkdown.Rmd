@@ -1,0 +1,326 @@
+---
+title: "Flowering, seed production and germination of Arabis alpina"
+subtitle: "Supplementary methods, R code and analysis outputs"
+author: "Gerald Keneth Kaniaru and Samuel Kuria Kiboi"
+date: "2026"
+output:
+  html_document:
+    toc: true
+    toc_float:
+      collapsed: false
+    toc_depth: 2
+    number_sections: true
+    code_folding: hide
+    self_contained: true
+    theme: cosmo
+---
+
+
+<style id="report-heading-style">h1, h2, h3, h4, h5, h6 { font-weight: 700; }</style>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+root <- normalizePath(".", winslash = "/")
+out <- file.path(root, "outputs")
+figure_manifest <- utils::read.csv(file.path(out, "Publication_figure_manifest.csv"))
+preview_dir <- tempfile("arabis-report-images-")
+dir.create(preview_dir)
+
+read_utf8 <- function(path) readLines(path, encoding = "UTF-8", warn = FALSE)
+
+show_code <- function(prefix) {
+  script <- list.files(file.path(root, "scripts"), full.names = TRUE)
+  script <- script[startsWith(basename(script), paste0(prefix, "_"))]
+  stopifnot(length(script) == 1L)
+  cat("\n**Source:** `scripts/", basename(script), "`\n\n",
+      "~~~~{.r}\n", paste(read_utf8(script), collapse = "\n"),
+      "\n~~~~\n\n", sep = "")
+}
+
+show_figure <- function(number, title, fallback = character()) {
+  paths <- file.path(root, figure_manifest$File[
+    figure_manifest$Number == number & figure_manifest$Format == "png"
+  ])
+  paths <- c(paths, file.path(out, fallback))
+  paths <- paths[file.exists(paths) & !dir.exists(paths)]
+  cat("\n### ", number, ". ", title, "\n\n", sep = "")
+  if (!length(paths)) {
+    cat("*The saved figure was not found locally.*\n\n")
+    return(invisible(NULL))
+  }
+  path <- paths[[1L]]
+  # Keep the standalone HTML manageable; the project retains full-resolution files.
+  preview <- file.path(preview_dir, paste0(sub(" ", "_", number), ".jpg"))
+  image <- magick::image_read(path)
+  image <- magick::image_resize(image, "1550x1100>")
+  magick::image_write(image, preview, format = "jpeg", quality = 92)
+  cat("![", title, "](<", preview, ">)\n\n", sep = "")
+  caption <- sub("\\.png$", "_caption.txt", path, ignore.case = TRUE)
+  if (file.exists(caption)) {
+    text <- paste(read_utf8(caption), collapse = " ")
+    cat(sub("^Figure S?\\d+\\.\\s*", "", text), "\n\n", sep = "")
+  }
+}
+
+show_diagnostic <- function(folder, file, title, explanation) {
+  path <- file.path(out, folder, "diagnostics", file)
+  if (!file.exists(path)) stop("Missing diagnostic figure: ", path)
+  preview <- file.path(preview_dir, paste0("diagnostic_", file))
+  image <- magick::image_resize(magick::image_read(path), "1550x1250>")
+  magick::image_write(image, preview, format = "png")
+  cat("\n\n#### ", title, "\n\n", explanation,
+      "\n\n![", title, "](<", preview, ">)\n\n", sep = "")
+}
+show_table <- function(number, title, file) {
+  cat("\n### ", number, ". ", title, "\n\n", sep = "")
+  path <- file.path(out, file)
+  if (!file.exists(path)) {
+    cat("*The saved table was not found locally.*\n\n")
+    return(invisible(NULL))
+  }
+  data <- utils::read.csv(path, check.names = FALSE, colClasses = "character",
+                         fileEncoding = "UTF-8")
+  caption <- sub("\\.csv$", "_caption.txt", path)
+  if (file.exists(caption)) {
+    text <- paste(read_utf8(caption), collapse = " ")
+    cat(sub("^Table S?\\d+\\.\\s*", "", text), "\n\n", sep = "")
+  }
+  table <- gt::gt(data, id = tolower(gsub(" ", "-", number))) |>
+    gt::tab_options(
+      container.overflow.x = TRUE, table.font.size = gt::px(14),
+      column_labels.font.weight = "bold"
+    )
+  cat("\n```{=html}\n", gt::as_raw_html(table, inline_css = TRUE),
+      "\n```\n\n", sep = "")
+}
+```
+
+# Study scope and reproducibility
+
+This supplement documents the analysis of flowering phenology, maternal seed traits, and germination in *Arabis alpina* along the Mount Kenya elevational gradient. The analysis covers 581 maternal sampling units from 27 occupied plots. The figures and tables below are read from the saved project outputs and numbered to match the 15 November 2026 manuscript. Use **Show** to inspect the full R code for each stage.
+
+## Inputs and run order
+
+Open `arabis analysis.Rproj`. Retain the project structure: `data/` for analysis inputs, `images/` for illustrations and photographs, `scripts/` for R code, and `outputs/` for saved results. The main raw workbooks include `trait_data.xlsx`, `plot_abiotic_factors.xlsx`, and `germination_counts.xlsx` under `data/raw/Datasets/`. The scripts document their other spatial and climate inputs.
+
+Run scripts 01–04 for the study illustrations, 05a for distributions, and 06–10 in order for model outputs. Run 05b after the fitted model objects have been saved. Script 05c generates the correlation figure. The mapping and projection scripts may require external inputs or cached files; review their setup sections before rerunning them.
+
+## Render this supplement
+
+From the analysis project root, run:
+
+```{.r}
+source("scripts/rmarkdown.R")
+```
+
+Rendering assembles the saved figures and tables and displays the source scripts. It does not execute the displayed scripts, refit models, or rerun simulations. The standalone HTML contains display-sized copies of the figures; use the original exports for publication.
+
+# Study area and field sampling
+
+The field illustrations document the Mount Kenya transect, vegetation, target species, and hierarchy from elevation bands to plots and sampled rosettes.
+
+## Mapping, vegetation and sampling code
+
+```{r field-code, results='asis'}
+for (id in c("01", "02", "03", "04")) show_code(id)
+```
+
+## Field figures
+
+```{r field-figures, results='asis'}
+show_figure("Figure 1", "Study area and sampling on Mount Kenya")
+show_figure("Figure 2", "Morphology of Arabis alpina")
+show_figure("Figure S1", "Vegetation along the Mount Kenya transect")
+show_figure("Figure S2", "Field sampling of Arabis alpina")
+```
+
+# Exploratory analysis and diagnostics
+
+The scripts inspect trait distributions, assess saved model fits, and calculate Spearman rank correlations. Correlations involving measured 100-seed mass are restricted to the four germination components.
+
+## Distributions, residual checks and correlations code
+
+```{r exploratory-code, results='asis'}
+for (id in c("05a", "05b", "05c")) show_code(id)
+```
+
+## Exploratory figures
+
+```{r exploratory-figures, results='asis'}
+show_figure("Figure S3", "Distributions of environmental predictors and reproductive traits")
+show_figure("Figure S5", "Spearman rank correlations")
+```
+
+# Flowering phenology and maternal seed allocation
+
+The flowering and seed-allocation analyses examine elevational associations and relationships among traits. The onset analysis distinguishes the final-flowering-date slope from its corresponding duration interpretation. Within- and among-plot coefficients are displayed separately.
+
+## Flowering and seed allocation code
+
+```{r flowering-code, results='asis'}
+for (id in c("06", "07")) show_code(id)
+```
+
+## Figures and tables
+
+```{r flowering-results, results='asis'}
+show_figure("Figure 3", "Environmental variation across 27 source plots")
+show_figure("Figure 4", "Elevational and trait associations")
+show_figure("Figure 5", "Within- and among-plot associations")
+show_table("Table 1", "Mixed-effects estimates for H1–H6",
+           "maternal_seed_allocation/tables/Table_1.csv")
+show_table("Table S1", "Candidate-model comparisons for H1–H6 and H8",
+           "maternal_seed_allocation/tables/Table_S1.csv")
+show_table("Table S2", "Environmental sensitivity coefficients and diagnostics",
+           "maternal_seed_allocation/tables/Table S2.csv")
+```
+
+# Germination responses
+
+The germination analyses relate onset, time spread, mean germination rate, and germination percentage to source elevation and 100-seed mass. The distribution sensitivity table reports the alternative fits and their diagnostic outcomes.
+
+## Germination code
+
+```{r germination-code, results='asis'}
+for (id in c("08", "09")) show_code(id)
+```
+
+## Figures and tables
+
+```{r germination-results, results='asis'}
+show_figure("Figure S4", "Germination experiment for Arabis alpina")
+show_figure("Figure 6", "Associations of germination with source elevation and 100-seed mass")
+show_table("Table 2", "Gaussian mixed-effects estimates for H7–H8",
+           "maternal_seed_mass_germination_responses/tables/Table_2.csv")
+show_table("Table S3", "Sensitivity to the germination response distribution",
+           "germination_elevation/tables/Table S3.csv")
+```
+
+# Mid-century projections
+
+The projection script compares the June 2021 baseline with 2041–2060 predictions under SSP2-4.5 and SSP5-8.5. The report displays saved results. Archived projection filenames are accepted as fallbacks for Figures 7 and S6.
+
+## Climate projection code
+
+```{r projection-code, results='asis'}
+show_code("10")
+```
+
+## Figures and table
+
+```{r projection-results, results='asis'}
+show_figure("Figure 7", "Baseline and projected reproductive traits",
+            c("projected_trait_changes_mid_century/figures/Figure_7_baseline_and_projected_reproductive_traits.png",
+              "projected_trait_changes_mid_century/figures/Figure_RQ6_projected_trait_changes_elevation.png"))
+show_figure("Figure S6", "Projected changes and bootstrap intervals",
+            c("projected_trait_changes_mid_century/figures/Figure_S6_bootstrap_trait_changes.png",
+              "projected_trait_changes_mid_century/figures/Figure_S7_bootstrap_trait_changes.png"))
+show_table("Table 3", "Modelled baseline means and projected means and changes",
+           "projected_trait_changes_mid_century/tables/Table_3.csv")
+```
+
+# Rendering session
+
+This records the R session used to assemble the supplement. Individual analysis scripts list their modelling and graphics packages.
+
+```{r session-info}
+sessionInfo()
+```
+
+## Diagnostic figures
+
+These plots check features of the fitted models that coefficient tables cannot show. They are visual checks, not proof that all assumptions hold. Warnings from rendering this report are hidden; numerical warnings and diagnostic results in the saved analysis tables are retained.
+
+### Flowering phenology
+
+```{r flowering-diagnostics, results='asis'}
+show_diagnostic(
+  "flowering_phenology", "Figure_H1_H3_residual_diagnostics.png",
+  "Flowering onset and duration models",
+  paste("Each row pairs standardized residuals against fitted values (left) with a normal Q–Q plot (right).",
+        "The rows show onset versus elevation, duration versus elevation, and duration versus onset.",
+        "A trend away from zero in the left panels suggests a mean-structure problem; changing spread suggests unequal variance.",
+        "Systematic departures from the Q–Q line indicate departures from Gaussian residuals.")
+)
+```
+
+### Germination responses to source elevation
+
+For each Gaussian model, the four panels show residuals against fitted values, a normal Q–Q plot, a residual histogram, and a scale-location plot. Look for trends around zero, skew or heavy tails, and changing residual spread. Discrete or bounded responses can produce bands or edge effects; the alternative models address sensitivity to the response distribution.
+
+```{r elevation-diagnostics, results='asis'}
+responses <- c("Time to first germination", "Germination time spread",
+               "Mean germination rate", "Germination percentage")
+for (i in seq_along(responses)) {
+  show_diagnostic(
+    "germination_elevation", paste0("Diagnostics_H7", letters[i], "_primary.png"),
+    paste(responses[i], "versus elevation"),
+    "Saved residual checks for the primary Gaussian elevation fit."
+  )
+}
+alternatives <- c(GP_binomial = "Germination percentage: binomial",
+                  GP_beta_binomial = "Germination percentage: beta-binomial",
+                  MGR_Gamma = "Mean germination rate: Gamma")
+for (key in names(alternatives)) {
+  show_diagnostic(
+    "germination_elevation", paste0("Sensitivity_", key, ".png"),
+    alternatives[[key]],
+    paste("DHARMa compares simulation-based residuals with the expected uniform distribution.",
+          "The fitted-value panel checks whether residual quantiles show trends.",
+          "Table S3 reports numerical checks and test results, including those for the ordinal fits.")
+  )
+}
+```
+
+### Maternal seed allocation
+
+```{r allocation-diagnostics, results='asis'}
+show_diagnostic(
+  "maternal_seed_allocation", "Figure_H4_residual_diagnostics.png",
+  "Mean individual seed mass versus elevation",
+  "These residual–fitted and normal Q–Q plots assess the Gaussian fit on the log seed-mass scale. Check for curvature, changing spread, and departures from the reference line."
+)
+show_diagnostic(
+  "maternal_seed_allocation", "Figure_H5_H6_DHARMa_diagnostics.png",
+  "Seed-number models for elevation and seed mass",
+  "The DHARMa plots assess the selected count models. Residuals should be approximately uniform under the fitted distribution, with no systematic change across fitted values. The displayed test results do not replace the separate convergence and Hessian checks."
+)
+```
+
+### Maternal seed mass and germination responses
+
+The same four Gaussian diagnostics are shown for each outcome before and after adjustment for source elevation. Compare the paired fits for changes in residual trends, spread, and tail departures. These checks assess model fit; they do not test the seed-mass coefficient.
+
+```{r mass-diagnostics, results='asis'}
+mass_responses <- c(H8a = "Time to first germination", H8_spread = "Germination time spread",
+                    H8b = "Mean germination rate", H8c = "Germination percentage")
+for (key in names(mass_responses)) {
+  for (fit in c("unadjusted", "elevation_adjusted")) {
+    adjustment <- if (fit == "unadjusted") "seed mass only" else "adjusted for elevation"
+    show_diagnostic(
+      "maternal_seed_mass_germination_responses", paste0("Diagnostics_", key, "_", fit, ".png"),
+      paste0(mass_responses[[key]], ": ", adjustment),
+      "Use the zero line, Q–Q reference line, histogram, and scale-location panel to assess the fit on the response scale used by the model."
+    )
+  }
+}
+```
+
+### Mid-century projections
+
+```{r projection-diagnostics, results='asis'}
+show_diagnostic(
+  "projected_trait_changes_mid_century", "Diagnostics_RQ6_models.png",
+  "Baseline climate–trait model residuals",
+  paste("Pearson residuals are plotted against fitted baseline values for each trait.",
+        "Inspect departures from zero, changes in spread, and isolated large residuals.",
+        "This saved overview precedes the seed-number stability revision and does not validate future climate extrapolation.")
+)
+show_diagnostic(
+  "projected_trait_changes_mid_century", "Seed_number_NB2_reduced_DHARMa.png",
+  "Revised seed-number projection model",
+  paste("This DHARMa check applies to the revised negative-binomial model without random intercepts.",
+        "Inspect residual uniformity and any pattern across fitted values.",
+        "The saved bootstrap refit logs document numerical stability separately; these plots do not quantify future climate uncertainty.")
+)
+```

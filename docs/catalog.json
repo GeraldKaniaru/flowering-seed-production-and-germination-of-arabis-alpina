@@ -5265,11 +5265,11 @@
       "category": "outputs",
       "size": 38565,
       "extension": "pdf",
-      "sha256": "c26083ff198c107bba008f6fe0960de3046608d4dab6ea8da6927e0ccfbf6975",
+      "sha256": "8f8ed7b97f7f89b05deb7d1f4499b5ea7406b75dae953fe44d8a50f03baad46c",
       "inRepository": true,
-      "bundle": "analysis-outputs.zip",
       "download": "https://raw.githubusercontent.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/main/outputs/diagnostics/model_residuals/Duration__elevation__original_response.pdf",
-      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/Duration__elevation__original_response.pdf"
+      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/Duration__elevation__original_response.pdf",
+      "bundle": null
     },
     {
       "path": "outputs/diagnostics/model_residuals/Duration__elevation__original_response.png",
@@ -5289,11 +5289,11 @@
       "category": "outputs",
       "size": 38602,
       "extension": "pdf",
-      "sha256": "2ccf1b475605249a333c56c4282d07d28fcece60ee35ee5c9634f5fa16d7fd3a",
+      "sha256": "f8ab1841d4581d89acbae5a69679f97040ded23f54f9e6bbed309fc673067fd3",
       "inRepository": true,
-      "bundle": "analysis-outputs.zip",
       "download": "https://raw.githubusercontent.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/main/outputs/diagnostics/model_residuals/Duration__elevation_climate__original_response.pdf",
-      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/Duration__elevation_climate__original_response.pdf"
+      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/Duration__elevation_climate__original_response.pdf",
+      "bundle": null
     },
     {
       "path": "outputs/diagnostics/model_residuals/Duration__elevation_climate__original_response.png",
@@ -5313,11 +5313,11 @@
       "category": "outputs",
       "size": 38668,
       "extension": "pdf",
-      "sha256": "9d35aa85597e4f8b3fa4648587a6ac1717190336176c2b2b19340cb09738b2a2",
+      "sha256": "b62bcb08b2a850576a82dd16e63aa234f71b1419be62bcdb198fe3dc2418df0a",
       "inRepository": true,
-      "bundle": "analysis-outputs.zip",
       "download": "https://raw.githubusercontent.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/main/outputs/diagnostics/model_residuals/Duration__elevation_climate_soil__original_response.pdf",
-      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/Duration__elevation_climate_soil__original_response.pdf"
+      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/Duration__elevation_climate_soil__original_response.pdf",
+      "bundle": null
     },
     {
       "path": "outputs/diagnostics/model_residuals/Duration__elevation_climate_soil__original_response.png",
@@ -5337,11 +5337,11 @@
       "category": "outputs",
       "size": 38624,
       "extension": "pdf",
-      "sha256": "6d6725b7a72539315988508536ea1886956505594219ab708f8f9e31c8c28bcf",
+      "sha256": "f7a89ff4bb5908432256058835f004b865b5bebb58324cfca37c279c236af2b8",
       "inRepository": true,
-      "bundle": "analysis-outputs.zip",
       "download": "https://raw.githubusercontent.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/main/outputs/diagnostics/model_residuals/Duration__elevation_soil__original_response.pdf",
-      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/Duration__elevation_soil__original_response.pdf"
+      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/Duration__elevation_soil__original_response.pdf",
+      "bundle": null
     },
     {
       "path": "outputs/diagnostics/model_residuals/Duration__elevation_soil__original_response.png",
@@ -5361,11 +5361,11 @@
       "category": "outputs",
       "size": 73747,
       "extension": "pdf",
-      "sha256": "61bb0eaa1c35275e4211bec6a67454778d691efd492ae5004e1a0aba104812fb",
+      "sha256": "afbab32331481818ad290929c399e52dae89d3c413af15249f61e653b65d4cd0",
       "inRepository": true,
-      "bundle": "analysis-outputs.zip",
       "download": "https://raw.githubusercontent.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/main/outputs/diagnostics/model_residuals/GP__H7_elevation__original_response.pdf",
-      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/GP__H7_elevation__original_response.pdf"
+      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/GP__H7_elevation__original_response.pdf",
+      "bundle": null
     },
     {
       "path": "outputs/diagnostics/model_residuals/GP__H7_elevation__original_response.png",
@@ -5385,11 +5385,11 @@
       "category": "outputs",
       "size": 108810,
       "extension": "pdf",
-      "sha256": "a465468456f047edb05296c1dab2c6e9644770d5a15e623d69f31a551c14c175",
+      "sha256": "c928c676f6b7565258295015eb47527ff8744f5908e6c8b6d87a0b115c76acc5",
       "inRepository": true,
-      "bundle": "analysis-outputs.zip",
       "download": "https://raw.githubusercontent.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/main/outputs/diagnostics/model_residuals/GP__H8_elevation_adjusted__original_response.pdf",
-      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/GP__H8_elevation_adjusted__original_response.pdf"
+      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/GP__H8_elevation_adjusted__original_response.pdf",
+      "bundle": null
     },
     {
       "path": "outputs/diagnostics/model_residuals/GP__H8_elevation_adjusted__original_response.png",
@@ -5409,11 +5409,11 @@
       "category": "outputs",
       "size": 108724,
       "extension": "pdf",
-      "sha256": "5e55d7c79fe5d6a989855950130af7a44538b1cb0cc2a4a71837b5ab7ef1399d",
+      "sha256": "5d600796027fbcddedc598012b2855c4f6146fd911a65ca641b34eefb44b57ae",
       "inRepository": true,
-      "bundle": "analysis-outputs.zip",
       "download": "https://raw.githubusercontent.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/main/outputs/diagnostics/model_residuals/GP__H8_unadjusted__original_response.pdf",
-      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/GP__H8_unadjusted__original_response.pdf"
+      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/GP__H8_unadjusted__original_response.pdf",
+      "bundle": null
     },
     {
       "path": "outputs/diagnostics/model_residuals/GP__H8_unadjusted__original_response.png",
@@ -5433,11 +5433,11 @@
       "category": "outputs",
       "size": 46748,
       "extension": "pdf",
-      "sha256": "3b00a9336e9f03f4c157c5fa711d848445e45787123d77ec5a4ff2f40380e573",
+      "sha256": "7c3a949cb67f904246438ce998fbdf6d172ecf2e1002966151badfe6fd2c91e0",
       "inRepository": true,
-      "bundle": "analysis-outputs.zip",
       "download": "https://raw.githubusercontent.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/main/outputs/diagnostics/model_residuals/H3__Duration__elevation__original_response.pdf",
-      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/H3__Duration__elevation__original_response.pdf"
+      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/H3__Duration__elevation__original_response.pdf",
+      "bundle": null
     },
     {
       "path": "outputs/diagnostics/model_residuals/H3__Duration__elevation__original_response.png",
@@ -5457,11 +5457,11 @@
       "category": "outputs",
       "size": 46792,
       "extension": "pdf",
-      "sha256": "f5cdf4f4b63341dc7bcb3c3184cf9a424e735d8ced29077b3cb67da2c7b348d9",
+      "sha256": "ee540e5be2bc6ef4b0fbe18617977d6372d2ed4c54f64a48793efdeb5e038fa7",
       "inRepository": true,
-      "bundle": "analysis-outputs.zip",
       "download": "https://raw.githubusercontent.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/main/outputs/diagnostics/model_residuals/H3__Duration__elevation_climate__original_response.pdf",
-      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/H3__Duration__elevation_climate__original_response.pdf"
+      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/H3__Duration__elevation_climate__original_response.pdf",
+      "bundle": null
     },
     {
       "path": "outputs/diagnostics/model_residuals/H3__Duration__elevation_climate__original_response.png",
@@ -5481,11 +5481,11 @@
       "category": "outputs",
       "size": 46744,
       "extension": "pdf",
-      "sha256": "feb77f78497a1232712cba46f35d73e6c1e509557875f8befcca331119d459df",
+      "sha256": "c1fec53616c0023de0e79a06d64348c371a363b567ceb91b4d1218dadf69bb79",
       "inRepository": true,
-      "bundle": "analysis-outputs.zip",
       "download": "https://raw.githubusercontent.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/main/outputs/diagnostics/model_residuals/H3__Duration__elevation_climate_soil__original_response.pdf",
-      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/H3__Duration__elevation_climate_soil__original_response.pdf"
+      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/H3__Duration__elevation_climate_soil__original_response.pdf",
+      "bundle": null
     },
     {
       "path": "outputs/diagnostics/model_residuals/H3__Duration__elevation_climate_soil__original_response.png",
@@ -5505,11 +5505,11 @@
       "category": "outputs",
       "size": 46644,
       "extension": "pdf",
-      "sha256": "598383542ed0c14fa5026f8dd97cfe6d10a7bcea84e0157329d2f54dcf656d61",
+      "sha256": "de2cfa6a8024d8b073dc466666dd0e856dcbd44d65911d28611431e7ab5e1970",
       "inRepository": true,
-      "bundle": "analysis-outputs.zip",
       "download": "https://raw.githubusercontent.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/main/outputs/diagnostics/model_residuals/H3__Duration__elevation_soil__original_response.pdf",
-      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/H3__Duration__elevation_soil__original_response.pdf"
+      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/H3__Duration__elevation_soil__original_response.pdf",
+      "bundle": null
     },
     {
       "path": "outputs/diagnostics/model_residuals/H3__Duration__elevation_soil__original_response.png",
@@ -5529,11 +5529,11 @@
       "category": "outputs",
       "size": 46768,
       "extension": "pdf",
-      "sha256": "5761e8d6d47a16323daf0b68408762826cd5c27b0442387d4f1f86d603af395d",
+      "sha256": "de88bf674e3d5a63b743ed98c9d2867a42a487e41989f73baf8d60f785c61a69",
       "inRepository": true,
-      "bundle": "analysis-outputs.zip",
       "download": "https://raw.githubusercontent.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/main/outputs/diagnostics/model_residuals/H3__Duration__onset__original_response.pdf",
-      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/H3__Duration__onset__original_response.pdf"
+      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/H3__Duration__onset__original_response.pdf",
+      "bundle": null
     },
     {
       "path": "outputs/diagnostics/model_residuals/H3__Duration__onset__original_response.png",
@@ -5553,11 +5553,11 @@
       "category": "outputs",
       "size": 47236,
       "extension": "pdf",
-      "sha256": "08eb8d5f9cad985897dfe88a61c9a8b73b653a8fc19f23727e5e2c3168c8863d",
+      "sha256": "2307f58bcf5187412b0c3ee8eef14678001208bf35f9a0849c155a622c56c31b",
       "inRepository": true,
-      "bundle": "analysis-outputs.zip",
       "download": "https://raw.githubusercontent.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/main/outputs/diagnostics/model_residuals/H3__FinalDate__elevation__original_response.pdf",
-      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/H3__FinalDate__elevation__original_response.pdf"
+      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/H3__FinalDate__elevation__original_response.pdf",
+      "bundle": null
     },
     {
       "path": "outputs/diagnostics/model_residuals/H3__FinalDate__elevation__original_response.png",
@@ -5577,11 +5577,11 @@
       "category": "outputs",
       "size": 47239,
       "extension": "pdf",
-      "sha256": "8f91eb1dfb0e8b42532f5d988f416932d989b250ce87e43bb4d021a7765f273f",
+      "sha256": "1fe447e1437abec3ef06ea4941c630de9353d559560344e185edb5ebf7fdc20f",
       "inRepository": true,
-      "bundle": "analysis-outputs.zip",
       "download": "https://raw.githubusercontent.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/main/outputs/diagnostics/model_residuals/H3__FinalDate__elevation_climate__original_response.pdf",
-      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/H3__FinalDate__elevation_climate__original_response.pdf"
+      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/H3__FinalDate__elevation_climate__original_response.pdf",
+      "bundle": null
     },
     {
       "path": "outputs/diagnostics/model_residuals/H3__FinalDate__elevation_climate__original_response.png",
@@ -5601,11 +5601,11 @@
       "category": "outputs",
       "size": 47264,
       "extension": "pdf",
-      "sha256": "fd9b798ae14defb2edbc42cb757b15a7869e6bd5cad8e90bb541c723d6a28f55",
+      "sha256": "6195d767e1641d0a9191f997c7ff6fe9275a61c6f3ba7d9c0617a0f51d12ce96",
       "inRepository": true,
-      "bundle": "analysis-outputs.zip",
       "download": "https://raw.githubusercontent.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/main/outputs/diagnostics/model_residuals/H3__FinalDate__elevation_climate_soil__original_response.pdf",
-      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/H3__FinalDate__elevation_climate_soil__original_response.pdf"
+      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/H3__FinalDate__elevation_climate_soil__original_response.pdf",
+      "bundle": null
     },
     {
       "path": "outputs/diagnostics/model_residuals/H3__FinalDate__elevation_climate_soil__original_response.png",
@@ -5625,11 +5625,11 @@
       "category": "outputs",
       "size": 47200,
       "extension": "pdf",
-      "sha256": "48f3c97cd7d257df257491a37ac260603fafbd1ecd5b6c25d02b8b292407465e",
+      "sha256": "c6a79e4574a29b671011ada629082d1753f02eb671ec05fb7030c8c70a39984d",
       "inRepository": true,
-      "bundle": "analysis-outputs.zip",
       "download": "https://raw.githubusercontent.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/main/outputs/diagnostics/model_residuals/H3__FinalDate__elevation_soil__original_response.pdf",
-      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/H3__FinalDate__elevation_soil__original_response.pdf"
+      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/H3__FinalDate__elevation_soil__original_response.pdf",
+      "bundle": null
     },
     {
       "path": "outputs/diagnostics/model_residuals/H3__FinalDate__elevation_soil__original_response.png",
@@ -5649,11 +5649,11 @@
       "category": "outputs",
       "size": 47248,
       "extension": "pdf",
-      "sha256": "e906fb3033cee4e6c78f133ea85c14f82a249446484bb75a413e0018a475631a",
+      "sha256": "331e0913971e04bac818c98831ce3d4b86deadc711d94c39fc84ec5600db8501",
       "inRepository": true,
-      "bundle": "analysis-outputs.zip",
       "download": "https://raw.githubusercontent.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/main/outputs/diagnostics/model_residuals/H3__FinalDate__onset__original_response.pdf",
-      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/H3__FinalDate__onset__original_response.pdf"
+      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/H3__FinalDate__onset__original_response.pdf",
+      "bundle": null
     },
     {
       "path": "outputs/diagnostics/model_residuals/H3__FinalDate__onset__original_response.png",
@@ -5673,11 +5673,11 @@
       "category": "outputs",
       "size": 47195,
       "extension": "pdf",
-      "sha256": "987abd63152e57ecfcb0c34de4c36d276bb328f1ca52a8eb1269908ce2822ec1",
+      "sha256": "569911655e2633c46c796c7c070a4e18c0ffff662c658f7f84e31e356c106434",
       "inRepository": true,
-      "bundle": "analysis-outputs.zip",
       "download": "https://raw.githubusercontent.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/main/outputs/diagnostics/model_residuals/H3__within_among__original_response.pdf",
-      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/H3__within_among__original_response.pdf"
+      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/H3__within_among__original_response.pdf",
+      "bundle": null
     },
     {
       "path": "outputs/diagnostics/model_residuals/H3__within_among__original_response.png",
@@ -5697,11 +5697,11 @@
       "category": "outputs",
       "size": 99381,
       "extension": "pdf",
-      "sha256": "9563688786692826c85b80b2cd70597bd8a2e787fa6dd171d461f0537348fc95",
+      "sha256": "572a70c649ac087ffb985cdbbfae1dedacabe43c773d036195da5ae1c62b9157",
       "inRepository": true,
-      "bundle": "analysis-outputs.zip",
       "download": "https://raw.githubusercontent.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/main/outputs/diagnostics/model_residuals/LogMISM__elevation__existing_log_response.pdf",
-      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/LogMISM__elevation__existing_log_response.pdf"
+      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/LogMISM__elevation__existing_log_response.pdf",
+      "bundle": null
     },
     {
       "path": "outputs/diagnostics/model_residuals/LogMISM__elevation__existing_log_response.png",
@@ -5721,11 +5721,11 @@
       "category": "outputs",
       "size": 99567,
       "extension": "pdf",
-      "sha256": "3efb1b7f7169a58afbb29f5fecd992f9ab6bf071c9edde772566b7c1f658ab39",
+      "sha256": "ab5c940a0aa5ae00593cea54dd56ecc3779f2dc13a23a69ed5473b4363ad9167",
       "inRepository": true,
-      "bundle": "analysis-outputs.zip",
       "download": "https://raw.githubusercontent.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/main/outputs/diagnostics/model_residuals/LogMISM__elevation__original_response.pdf",
-      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/LogMISM__elevation__original_response.pdf"
+      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/LogMISM__elevation__original_response.pdf",
+      "bundle": null
     },
     {
       "path": "outputs/diagnostics/model_residuals/LogMISM__elevation__original_response.png",
@@ -5745,11 +5745,11 @@
       "category": "outputs",
       "size": 99322,
       "extension": "pdf",
-      "sha256": "6b9670290058d7f1ede5630b0b571e7b8a77bbc2c6c9d2390f2dfc923b7d6cd9",
+      "sha256": "b88d24af109f910b315dbe21ccc0eea5e01d963c6cb8b23524eb7d789e22b0b4",
       "inRepository": true,
-      "bundle": "analysis-outputs.zip",
       "download": "https://raw.githubusercontent.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/main/outputs/diagnostics/model_residuals/LogMISM__elevation_climate__existing_log_response.pdf",
-      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/LogMISM__elevation_climate__existing_log_response.pdf"
+      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/LogMISM__elevation_climate__existing_log_response.pdf",
+      "bundle": null
     },
     {
       "path": "outputs/diagnostics/model_residuals/LogMISM__elevation_climate__existing_log_response.png",
@@ -5769,11 +5769,11 @@
       "category": "outputs",
       "size": 99388,
       "extension": "pdf",
-      "sha256": "8839f31cb5fb8492fe5ab48427e53deb67eafa154107b91c965a7b7b92e698d2",
+      "sha256": "dc2418a375490933be7a6457e04405ed448d1be7eeffc0ea743811e5a74b18ef",
       "inRepository": true,
-      "bundle": "analysis-outputs.zip",
       "download": "https://raw.githubusercontent.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/main/outputs/diagnostics/model_residuals/LogMISM__elevation_climate__original_response.pdf",
-      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/LogMISM__elevation_climate__original_response.pdf"
+      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/LogMISM__elevation_climate__original_response.pdf",
+      "bundle": null
     },
     {
       "path": "outputs/diagnostics/model_residuals/LogMISM__elevation_climate__original_response.png",
@@ -5793,11 +5793,11 @@
       "category": "outputs",
       "size": 99278,
       "extension": "pdf",
-      "sha256": "8098eef8b5135ef48555c2e0bfacdf6fd79044a21f40b2e5da5108c2d366f059",
+      "sha256": "d915dea014ebc19605dc6a0759b81eecf935915b5365be2cff60902b168cd664",
       "inRepository": true,
-      "bundle": "analysis-outputs.zip",
       "download": "https://raw.githubusercontent.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/main/outputs/diagnostics/model_residuals/LogMISM__elevation_climate_soil__existing_log_response.pdf",
-      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/LogMISM__elevation_climate_soil__existing_log_response.pdf"
+      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/LogMISM__elevation_climate_soil__existing_log_response.pdf",
+      "bundle": null
     },
     {
       "path": "outputs/diagnostics/model_residuals/LogMISM__elevation_climate_soil__existing_log_response.png",
@@ -5817,11 +5817,11 @@
       "category": "outputs",
       "size": 99289,
       "extension": "pdf",
-      "sha256": "5f556a8ebf66dd0c015ba9670660dd71594aba9cb6a7dbb08f4f4a5bc623b905",
+      "sha256": "91758e810e9f62e8cc887ce9e735873b8077f9dec6eb1cdd82e7f8bb990e49b6",
       "inRepository": true,
-      "bundle": "analysis-outputs.zip",
       "download": "https://raw.githubusercontent.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/main/outputs/diagnostics/model_residuals/LogMISM__elevation_climate_soil__original_response.pdf",
-      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/LogMISM__elevation_climate_soil__original_response.pdf"
+      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/LogMISM__elevation_climate_soil__original_response.pdf",
+      "bundle": null
     },
     {
       "path": "outputs/diagnostics/model_residuals/LogMISM__elevation_climate_soil__original_response.png",
@@ -5841,11 +5841,11 @@
       "category": "outputs",
       "size": 99318,
       "extension": "pdf",
-      "sha256": "999ea88425eba20d2dea254ad1a9e28a287c89df1a1e8869bd59f778d10a9e9d",
+      "sha256": "ab9a927c227caacba6d5b2fd35071875142e26924f9e00e8dbf99ab7655cc2d9",
       "inRepository": true,
-      "bundle": "analysis-outputs.zip",
       "download": "https://raw.githubusercontent.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/main/outputs/diagnostics/model_residuals/LogMISM__elevation_soil__existing_log_response.pdf",
-      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/LogMISM__elevation_soil__existing_log_response.pdf"
+      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/LogMISM__elevation_soil__existing_log_response.pdf",
+      "bundle": null
     },
     {
       "path": "outputs/diagnostics/model_residuals/LogMISM__elevation_soil__existing_log_response.png",
@@ -5865,11 +5865,11 @@
       "category": "outputs",
       "size": 99520,
       "extension": "pdf",
-      "sha256": "3c49dfba9222f233324b208f016aafcb913b754378d4874315f87fb3eb5f4218",
+      "sha256": "133a190759eb8235a172d7df471ebba717cb5cc7f73811b9bdce3f6fba79060e",
       "inRepository": true,
-      "bundle": "analysis-outputs.zip",
       "download": "https://raw.githubusercontent.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/main/outputs/diagnostics/model_residuals/LogMISM__elevation_soil__original_response.pdf",
-      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/LogMISM__elevation_soil__original_response.pdf"
+      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/LogMISM__elevation_soil__original_response.pdf",
+      "bundle": null
     },
     {
       "path": "outputs/diagnostics/model_residuals/LogMISM__elevation_soil__original_response.png",
@@ -5889,11 +5889,11 @@
       "category": "outputs",
       "size": 97674,
       "extension": "pdf",
-      "sha256": "ce6b0f4ae8aebe1a5fdf91a236f27fb495ec81dbc6b2843c4f69122d913c0de3",
+      "sha256": "1bbbbaf6dcf433042fc94d8d9a17ddfa34ded475101c784bcbaa2e9febb5a2e4",
       "inRepository": true,
-      "bundle": "analysis-outputs.zip",
       "download": "https://raw.githubusercontent.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/main/outputs/diagnostics/model_residuals/MGR__H7_elevation__original_response.pdf",
-      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/MGR__H7_elevation__original_response.pdf"
+      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/MGR__H7_elevation__original_response.pdf",
+      "bundle": null
     },
     {
       "path": "outputs/diagnostics/model_residuals/MGR__H7_elevation__original_response.png",
@@ -5913,11 +5913,11 @@
       "category": "outputs",
       "size": 108149,
       "extension": "pdf",
-      "sha256": "7c54fbfc38e88eb61db202cfe255104afebc778f486de71d7212f3d2ce1e2d05",
+      "sha256": "d45c9c2da41330772dfbf1bc514432822498a1ba335a01cd7e4bf9399ce19615",
       "inRepository": true,
-      "bundle": "analysis-outputs.zip",
       "download": "https://raw.githubusercontent.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/main/outputs/diagnostics/model_residuals/MGR__H8_elevation_adjusted__original_response.pdf",
-      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/MGR__H8_elevation_adjusted__original_response.pdf"
+      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/MGR__H8_elevation_adjusted__original_response.pdf",
+      "bundle": null
     },
     {
       "path": "outputs/diagnostics/model_residuals/MGR__H8_elevation_adjusted__original_response.png",
@@ -5937,11 +5937,11 @@
       "category": "outputs",
       "size": 107885,
       "extension": "pdf",
-      "sha256": "01108b52b0b02cfb2fce9b6535d76793c8951393066ca4fabcfd567f46760763",
+      "sha256": "36dbb841bb88935a8af0748096aa09eff490b2263eda473c9ce51763dcfebefd",
       "inRepository": true,
-      "bundle": "analysis-outputs.zip",
       "download": "https://raw.githubusercontent.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/main/outputs/diagnostics/model_residuals/MGR__H8_unadjusted__original_response.pdf",
-      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/MGR__H8_unadjusted__original_response.pdf"
+      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/MGR__H8_unadjusted__original_response.pdf",
+      "bundle": null
     },
     {
       "path": "outputs/diagnostics/model_residuals/MGR__H8_unadjusted__original_response.png",
@@ -5961,11 +5961,11 @@
       "category": "outputs",
       "size": 42798,
       "extension": "pdf",
-      "sha256": "0273c9af0433f6d6de8934de171a384b79759458e57c507ee91569b7476f8211",
+      "sha256": "41ea5cb6b5fc7a3f2297043851c03ba27a5d21b06efb948daa60faebf51d28e1",
       "inRepository": true,
-      "bundle": "analysis-outputs.zip",
       "download": "https://raw.githubusercontent.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/main/outputs/diagnostics/model_residuals/Onset__elevation__original_response.pdf",
-      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/Onset__elevation__original_response.pdf"
+      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/Onset__elevation__original_response.pdf",
+      "bundle": null
     },
     {
       "path": "outputs/diagnostics/model_residuals/Onset__elevation__original_response.png",
@@ -5985,11 +5985,11 @@
       "category": "outputs",
       "size": 42652,
       "extension": "pdf",
-      "sha256": "1eb6812cb36e9e42b96f470a92ace775164ae826f9316875fde57236d56cdccb",
+      "sha256": "1a550d08d77b63398bdecd510584d063545737b753df4cf4a2cc7be5cb4292d6",
       "inRepository": true,
-      "bundle": "analysis-outputs.zip",
       "download": "https://raw.githubusercontent.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/main/outputs/diagnostics/model_residuals/Onset__elevation_climate__original_response.pdf",
-      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/Onset__elevation_climate__original_response.pdf"
+      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/Onset__elevation_climate__original_response.pdf",
+      "bundle": null
     },
     {
       "path": "outputs/diagnostics/model_residuals/Onset__elevation_climate__original_response.png",
@@ -6009,11 +6009,11 @@
       "category": "outputs",
       "size": 42684,
       "extension": "pdf",
-      "sha256": "5036eed2585108879d7e5447168957ddfaa098f158fe71e306309aa650683cf7",
+      "sha256": "f79af731c14720ee8216603e2e9b7b974ca5ba2fa264fe35e21d5fc82440ff65",
       "inRepository": true,
-      "bundle": "analysis-outputs.zip",
       "download": "https://raw.githubusercontent.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/main/outputs/diagnostics/model_residuals/Onset__elevation_climate_soil__original_response.pdf",
-      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/Onset__elevation_climate_soil__original_response.pdf"
+      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/Onset__elevation_climate_soil__original_response.pdf",
+      "bundle": null
     },
     {
       "path": "outputs/diagnostics/model_residuals/Onset__elevation_climate_soil__original_response.png",
@@ -6033,11 +6033,11 @@
       "category": "outputs",
       "size": 42657,
       "extension": "pdf",
-      "sha256": "491223452cc42d75f8eada1c4568cff53827bc43c40ba03463131c23190e3542",
+      "sha256": "0560203b9c58e82a03648b64b01c08090929ff552ca6addb45837f776d119b19",
       "inRepository": true,
-      "bundle": "analysis-outputs.zip",
       "download": "https://raw.githubusercontent.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/main/outputs/diagnostics/model_residuals/Onset__elevation_soil__original_response.pdf",
-      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/Onset__elevation_soil__original_response.pdf"
+      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/Onset__elevation_soil__original_response.pdf",
+      "bundle": null
     },
     {
       "path": "outputs/diagnostics/model_residuals/Onset__elevation_soil__original_response.png",
@@ -6067,13 +6067,13 @@
       "path": "outputs/diagnostics/model_residuals/Raw_response_comparison_models.rds",
       "name": "Raw_response_comparison_models.rds",
       "category": "outputs",
-      "size": 232951,
+      "size": 232994,
       "extension": "rds",
-      "sha256": "087ff71a024596566f728ae9b559afd4a43baa0f20f283eced3c7c50529f065c",
+      "sha256": "40b1f1f391db54f504e69a175fbcb2db908a131bc6d9d8ea0c18e61b91075b21",
       "inRepository": true,
-      "bundle": "analysis-outputs.zip",
       "download": "https://raw.githubusercontent.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/main/outputs/diagnostics/model_residuals/Raw_response_comparison_models.rds",
-      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/Raw_response_comparison_models.rds"
+      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/Raw_response_comparison_models.rds",
+      "bundle": null
     },
     {
       "path": "outputs/diagnostics/model_residuals/Table_Gaussian_model_residual_assessment.csv",
@@ -6093,11 +6093,11 @@
       "category": "outputs",
       "size": 47987,
       "extension": "pdf",
-      "sha256": "fc25ce53bcb9b7e8a8f53fc0e31efafd663e9400a5a10d84d88a1f79c26fb63b",
+      "sha256": "e23474a364868df645107116d253d27a38aa17f38ca702782bb706b6269becd4",
       "inRepository": true,
-      "bundle": "analysis-outputs.zip",
       "download": "https://raw.githubusercontent.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/main/outputs/diagnostics/model_residuals/Time_spread__H7_elevation__original_response.pdf",
-      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/Time_spread__H7_elevation__original_response.pdf"
+      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/Time_spread__H7_elevation__original_response.pdf",
+      "bundle": null
     },
     {
       "path": "outputs/diagnostics/model_residuals/Time_spread__H7_elevation__original_response.png",
@@ -6117,11 +6117,11 @@
       "category": "outputs",
       "size": 102466,
       "extension": "pdf",
-      "sha256": "c3a5e1d36e00fd75a056a4c564d893a9f565b3563efbf37a2f4ea0252016da7a",
+      "sha256": "d37960f6c554a21857c9bd1fea90ca0aa11437e70dd253ced74d3ba9ab4c02aa",
       "inRepository": true,
-      "bundle": "analysis-outputs.zip",
       "download": "https://raw.githubusercontent.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/main/outputs/diagnostics/model_residuals/Time_spread__H8_elevation_adjusted__original_response.pdf",
-      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/Time_spread__H8_elevation_adjusted__original_response.pdf"
+      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/Time_spread__H8_elevation_adjusted__original_response.pdf",
+      "bundle": null
     },
     {
       "path": "outputs/diagnostics/model_residuals/Time_spread__H8_elevation_adjusted__original_response.png",
@@ -6141,11 +6141,11 @@
       "category": "outputs",
       "size": 104290,
       "extension": "pdf",
-      "sha256": "82460a84a7f8348915304ecde4eb4c36d04c4e43bd75e516b6b8b500ada18ff7",
+      "sha256": "50f148a5a3ae49396884b9ff587c9a8aeef0ac1f909afd7cb35abbb1664bbe53",
       "inRepository": true,
-      "bundle": "analysis-outputs.zip",
       "download": "https://raw.githubusercontent.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/main/outputs/diagnostics/model_residuals/Time_spread__H8_unadjusted__original_response.pdf",
-      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/Time_spread__H8_unadjusted__original_response.pdf"
+      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/Time_spread__H8_unadjusted__original_response.pdf",
+      "bundle": null
     },
     {
       "path": "outputs/diagnostics/model_residuals/Time_spread__H8_unadjusted__original_response.png",
@@ -6165,11 +6165,11 @@
       "category": "outputs",
       "size": 42966,
       "extension": "pdf",
-      "sha256": "be5afd4948979908bb8237d8d00ef9dfd50a5b394de700814fb4b9196cfab740",
+      "sha256": "dec85c6539785f840ae065b3439499d0342a9ebea1657886d7e9be762eb28ffb",
       "inRepository": true,
-      "bundle": "analysis-outputs.zip",
       "download": "https://raw.githubusercontent.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/main/outputs/diagnostics/model_residuals/t0__H7_elevation__original_response.pdf",
-      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/t0__H7_elevation__original_response.pdf"
+      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/t0__H7_elevation__original_response.pdf",
+      "bundle": null
     },
     {
       "path": "outputs/diagnostics/model_residuals/t0__H7_elevation__original_response.png",
@@ -6189,11 +6189,11 @@
       "category": "outputs",
       "size": 105758,
       "extension": "pdf",
-      "sha256": "7d719d6b98a61b85c4f722a2f14dfeae31f79d018ff52b2b22842a4a719ab54b",
+      "sha256": "0ecf5a86d9d80e4c9b4e0743d00d153b5fc5212cd206712200ccad9fd67e919f",
       "inRepository": true,
-      "bundle": "analysis-outputs.zip",
       "download": "https://raw.githubusercontent.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/main/outputs/diagnostics/model_residuals/t0__H8_elevation_adjusted__original_response.pdf",
-      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/t0__H8_elevation_adjusted__original_response.pdf"
+      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/t0__H8_elevation_adjusted__original_response.pdf",
+      "bundle": null
     },
     {
       "path": "outputs/diagnostics/model_residuals/t0__H8_elevation_adjusted__original_response.png",
@@ -6213,11 +6213,11 @@
       "category": "outputs",
       "size": 104344,
       "extension": "pdf",
-      "sha256": "cb579db5e160e99d9bd0bf931856a3501e82604c49b14f4482b6b88e56af7ee6",
+      "sha256": "376507cd8c0d59eb14299c6a4c1119c4b54effd84f189bdcd21dff84c732034b",
       "inRepository": true,
-      "bundle": "analysis-outputs.zip",
       "download": "https://raw.githubusercontent.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/main/outputs/diagnostics/model_residuals/t0__H8_unadjusted__original_response.pdf",
-      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/t0__H8_unadjusted__original_response.pdf"
+      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/diagnostics/model_residuals/t0__H8_unadjusted__original_response.pdf",
+      "bundle": null
     },
     {
       "path": "outputs/diagnostics/model_residuals/t0__H8_unadjusted__original_response.png",
@@ -6511,13 +6511,13 @@
       "path": "outputs/flowering_phenology/models/Figure_objects_H1_H3.rds",
       "name": "Figure_objects_H1_H3.rds",
       "category": "outputs",
-      "size": 1593955,
+      "size": 1592791,
       "extension": "rds",
-      "sha256": "9d00802eb584c0818b4fc6d39834ef65c27b153845de71d4a803da353579b25b",
+      "sha256": "90e1a4ff77e7a1fa895e929097418b7ae2dcad52c3401112d8c924b432a62aa5",
       "inRepository": true,
-      "bundle": "analysis-outputs.zip",
       "download": "https://raw.githubusercontent.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/main/outputs/flowering_phenology/models/Figure_objects_H1_H3.rds",
-      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/flowering_phenology/models/Figure_objects_H1_H3.rds"
+      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/flowering_phenology/models/Figure_objects_H1_H3.rds",
+      "bundle": null
     },
     {
       "path": "outputs/flowering_phenology/models/Models_H1_H3_ML.rds",
@@ -7219,13 +7219,13 @@
       "path": "outputs/germination_elevation/models/Figure_objects_H7.rds",
       "name": "Figure_objects_H7.rds",
       "category": "outputs",
-      "size": 1281228,
+      "size": 1280135,
       "extension": "rds",
-      "sha256": "3f2b675365ff12fe354e91f46bd1cdf35cf9891c5ce321a527cd49daa7f65eb5",
+      "sha256": "942f08cb890442d90071e1d2739705a8b92e60c1a20d59e1c460215c8e3e2afb",
       "inRepository": true,
-      "bundle": "analysis-outputs.zip",
       "download": "https://raw.githubusercontent.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/main/outputs/germination_elevation/models/Figure_objects_H7.rds",
-      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/germination_elevation/models/Figure_objects_H7.rds"
+      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/germination_elevation/models/Figure_objects_H7.rds",
+      "bundle": null
     },
     {
       "path": "outputs/germination_elevation/models/H7_distribution_sensitivity_models.rds",
@@ -7233,11 +7233,11 @@
       "category": "outputs",
       "size": 358826,
       "extension": "rds",
-      "sha256": "562b63dd75c4286feda2551c373209a1eaceff0e48ea7d11b8032e9cdc5d64e8",
+      "sha256": "dbbb63436c668711f1cf30b4f9308ce79783948d8e8c7362bb0829eae312347a",
       "inRepository": true,
-      "bundle": "analysis-outputs.zip",
       "download": "https://raw.githubusercontent.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/main/outputs/germination_elevation/models/H7_distribution_sensitivity_models.rds",
-      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/germination_elevation/models/H7_distribution_sensitivity_models.rds"
+      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/germination_elevation/models/H7_distribution_sensitivity_models.rds",
+      "bundle": null
     },
     {
       "path": "outputs/germination_elevation/models/Models_H7_germination_elevation.rds",
@@ -7665,11 +7665,11 @@
       "category": "outputs",
       "size": 63944,
       "extension": "pdf",
-      "sha256": "5a7dde81b1a52d72bb75cce7c6513f7ac43b04bde8879b009f43e4329b1d377e",
+      "sha256": "2c23177b793c0422e9e45d55dad6b6687b80af20f069d7a31d55066bb83440bc",
       "inRepository": true,
-      "bundle": "analysis-outputs.zip",
       "download": "https://raw.githubusercontent.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/main/outputs/maternal_seed_allocation/diagnostics/Figure_H4_residual_diagnostics.pdf",
-      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/maternal_seed_allocation/diagnostics/Figure_H4_residual_diagnostics.pdf"
+      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/maternal_seed_allocation/diagnostics/Figure_H4_residual_diagnostics.pdf",
+      "bundle": null
     },
     {
       "path": "outputs/maternal_seed_allocation/diagnostics/Figure_H4_residual_diagnostics.png",
@@ -7687,13 +7687,13 @@
       "path": "outputs/maternal_seed_allocation/diagnostics/Figure_H5_H6_DHARMa_diagnostics.pdf",
       "name": "Figure_H5_H6_DHARMa_diagnostics.pdf",
       "category": "outputs",
-      "size": 126301,
+      "size": 126302,
       "extension": "pdf",
-      "sha256": "90eda726bcb1050b814cf6ce25a8f84836f9a89307a95d9ee76637997b457d90",
+      "sha256": "30b132d9ba0e918e179009154e5c0a89eaaae1d53c0ad4726a287ead4bc8b5a5",
       "inRepository": true,
-      "bundle": "analysis-outputs.zip",
       "download": "https://raw.githubusercontent.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/main/outputs/maternal_seed_allocation/diagnostics/Figure_H5_H6_DHARMa_diagnostics.pdf",
-      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/maternal_seed_allocation/diagnostics/Figure_H5_H6_DHARMa_diagnostics.pdf"
+      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/maternal_seed_allocation/diagnostics/Figure_H5_H6_DHARMa_diagnostics.pdf",
+      "bundle": null
     },
     {
       "path": "outputs/maternal_seed_allocation/diagnostics/Figure_H5_H6_DHARMa_diagnostics.png",
@@ -7903,25 +7903,25 @@
       "path": "outputs/maternal_seed_allocation/models/Figure_objects_H4_H6.rds",
       "name": "Figure_objects_H4_H6.rds",
       "category": "outputs",
-      "size": 1497518,
+      "size": 1496463,
       "extension": "rds",
-      "sha256": "8932796d5d6c10da8b6d8b1c4089c5d998ab4b1c870f468c9efb73ac5dd013aa",
+      "sha256": "91469aefd734abef0cc3e558eaadd4d10014b6612a4f4976571bfb66992fc91b",
       "inRepository": true,
-      "bundle": "analysis-outputs.zip",
       "download": "https://raw.githubusercontent.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/main/outputs/maternal_seed_allocation/models/Figure_objects_H4_H6.rds",
-      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/maternal_seed_allocation/models/Figure_objects_H4_H6.rds"
+      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/maternal_seed_allocation/models/Figure_objects_H4_H6.rds",
+      "bundle": null
     },
     {
       "path": "outputs/maternal_seed_allocation/models/Models_H4_H6.rds",
       "name": "Models_H4_H6.rds",
       "category": "outputs",
-      "size": 1065372,
+      "size": 1065412,
       "extension": "rds",
-      "sha256": "850245def2bb3b6e79ce47e8256f1684a031da75be69f04393013305514053c7",
+      "sha256": "8217b0926382cc2664bfef073cca8ca36e22125368897c59feabc680298e4ae7",
       "inRepository": true,
-      "bundle": "analysis-outputs.zip",
       "download": "https://raw.githubusercontent.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/main/outputs/maternal_seed_allocation/models/Models_H4_H6.rds",
-      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/maternal_seed_allocation/models/Models_H4_H6.rds"
+      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/maternal_seed_allocation/models/Models_H4_H6.rds",
+      "bundle": null
     },
     {
       "path": "outputs/maternal_seed_allocation/tables/Table S2.csv",
@@ -8563,13 +8563,13 @@
       "path": "outputs/maternal_seed_mass_germination_responses/models/Figure_objects_H8.rds",
       "name": "Figure_objects_H8.rds",
       "category": "outputs",
-      "size": 1359391,
+      "size": 1358379,
       "extension": "rds",
-      "sha256": "1ebfeadef9da052c14945786eaa8e6da8188ecbec2e34b649f10880b78f1538e",
+      "sha256": "d4966e4bd70ad999e0f7faef341ce559c2b3667e05e3c16fa0a56e1ba263289a",
       "inRepository": true,
-      "bundle": "analysis-outputs.zip",
       "download": "https://raw.githubusercontent.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/main/outputs/maternal_seed_mass_germination_responses/models/Figure_objects_H8.rds",
-      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/maternal_seed_mass_germination_responses/models/Figure_objects_H8.rds"
+      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/maternal_seed_mass_germination_responses/models/Figure_objects_H8.rds",
+      "bundle": null
     },
     {
       "path": "outputs/maternal_seed_mass_germination_responses/models/H8_bootstrap_signature.rds",
@@ -9127,13 +9127,13 @@
       "path": "outputs/projected_trait_changes_mid_century/models/Models_RQ6_full_climate_trait_models.rds",
       "name": "Models_RQ6_full_climate_trait_models.rds",
       "category": "outputs",
-      "size": 268142,
+      "size": 268121,
       "extension": "rds",
-      "sha256": "30cfd475aa2d44de8cccccc1965f552f9c4083a0aeea00d75b7c90e57226108c",
+      "sha256": "2059a791292108d112da79885a7920dfa1a29edb25bad2ba8c23a28557bcbf93",
       "inRepository": true,
-      "bundle": "analysis-outputs.zip",
       "download": "https://raw.githubusercontent.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/main/outputs/projected_trait_changes_mid_century/models/Models_RQ6_full_climate_trait_models.rds",
-      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/projected_trait_changes_mid_century/models/Models_RQ6_full_climate_trait_models.rds"
+      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/projected_trait_changes_mid_century/models/Models_RQ6_full_climate_trait_models.rds",
+      "bundle": null
     },
     {
       "path": "outputs/projected_trait_changes_mid_century/models/Models_RQ6_stability_resolved_models.rds",
@@ -9163,13 +9163,13 @@
       "path": "outputs/projected_trait_changes_mid_century/models/Models_seed_number_original_unstable.rds",
       "name": "Models_seed_number_original_unstable.rds",
       "category": "outputs",
-      "size": 80990,
+      "size": 80982,
       "extension": "rds",
-      "sha256": "95efc65bd553929660b7d80badba08e89a0c92a3b50e249ca05393e3cb91ac64",
+      "sha256": "ab0401514bb6fb8115d62e9c8a88efc8f9aa2bd7c95bca909368e6f6f6ccc26d",
       "inRepository": true,
-      "bundle": "analysis-outputs.zip",
       "download": "https://raw.githubusercontent.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/main/outputs/projected_trait_changes_mid_century/models/Models_seed_number_original_unstable.rds",
-      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/projected_trait_changes_mid_century/models/Models_seed_number_original_unstable.rds"
+      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/outputs/projected_trait_changes_mid_century/models/Models_seed_number_original_unstable.rds",
+      "bundle": null
     },
     {
       "path": "outputs/projected_trait_changes_mid_century/models/Seed_number_stability_candidate_models.rds",
@@ -9976,6 +9976,18 @@
       "bundle": null
     },
     {
+      "path": "outputs/rmarkdown/Arabis_alpina_supplementary_methods.html",
+      "name": "Arabis_alpina_supplementary_methods.html",
+      "category": "outputs",
+      "size": 18064362,
+      "extension": "html",
+      "sha256": "73f46605c426a99b9e5fec343010c7c2fc2920496c15bf5a5dcee1b27fb1d036",
+      "inRepository": true,
+      "download": "https://geraldkaniaru.github.io/flowering-seed-production-and-germination-of-arabis-alpina/supplementary-methods.html",
+      "view": "https://geraldkaniaru.github.io/flowering-seed-production-and-germination-of-arabis-alpina/supplementary-methods.html",
+      "bundle": null
+    },
+    {
       "path": "outputs/sampling_design/Figure_S2_illustrative_coordinates.csv",
       "name": "Figure_S2_illustrative_coordinates.csv",
       "category": "outputs",
@@ -10742,6 +10754,30 @@
       "download": "https://raw.githubusercontent.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/main/scripts/10_projected_trait_changes_mid_century.R",
       "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/scripts/10_projected_trait_changes_mid_century.R",
       "bundle": null
+    },
+    {
+      "path": "scripts/rmarkdown.R",
+      "name": "rmarkdown.R",
+      "category": "scripts",
+      "size": 1571,
+      "extension": "r",
+      "sha256": "ad3473de6b8235466acace5e3f35d4b94b4a78b5866e0664b4c27bdc9b0dd7b0",
+      "inRepository": true,
+      "download": "https://raw.githubusercontent.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/main/scripts/rmarkdown.R",
+      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/scripts/rmarkdown.R",
+      "bundle": null
+    },
+    {
+      "path": "scripts/rmarkdown.Rmd",
+      "name": "rmarkdown.Rmd",
+      "category": "scripts",
+      "size": 15144,
+      "extension": "rmd",
+      "sha256": "6390e135f7b6f7391a4f3208da48704a6fee9999fd6513bf571c630d90167cc8",
+      "inRepository": true,
+      "download": "https://raw.githubusercontent.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/main/scripts/rmarkdown.Rmd",
+      "view": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/blob/main/scripts/rmarkdown.Rmd",
+      "bundle": null
     }
   ],
   "excluded": [
@@ -10783,5 +10819,10 @@
     "url": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/releases/download/analysis-update-20261115/analysis-updates-20261115.zip",
     "files": 109,
     "bytes": 366924380
+  },
+  "supplementUpdate": {
+    "url": "https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/releases/download/analysis-update-20261115-supplement/analysis-supplement-and-diagnostics.zip",
+    "files": 53,
+    "bytes": 21240353
   }
 }
