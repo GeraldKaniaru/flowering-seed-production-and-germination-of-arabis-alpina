@@ -3,9 +3,9 @@
 # Local definitions: this script never sources another R file.
 publication_root <- "outputs"
 publication_captions <- c(
-  Table_1 = "Table 1. Mixed-effects estimates for H1-H6 and within-plot and among-plot associations (581 maternal plants). Elevation effects are per 100 m. All H3 estimates, intervals and R-squared values describe final flowering date. Subtract one from H3 coefficients and confidence limits for the corresponding duration association. For H3, P_zero tests a coefficient against zero and P_duration tests it against one; the P column tests zero for all rows. The primary H3 final-date slope is 0.947 (95% CI 0.892-1.002); P_duration = 0.059. H4 uses natural-log MISM; H5-H6 use a log link. MISM is mean individual seed mass (mg per seed). Marginal_R2 and Conditional_R2 denote marginal and conditional R-squared.",
-  Table_S1 = "Table S1. Candidate-model comparisons for H1-H6 and seed-mass-germination models. Each comparison uses the same 581 maternal plants and random-effects structure. H1, H2, H4 and H5 each compare elevation alone, elevation + climate, elevation + soil, and elevation + climate + soil. Climate includes temperature and precipitation jointly; soil is soil PC1. H3 compares onset alone, onset + elevation, onset + elevation + climate, onset + elevation + soil, and onset + elevation + climate + soil. H3 AICc values were calculated from duration models and are equivalent for final flowering date with the same observations, onset predictor, covariates, random effects, maximum-likelihood fitting and residual covariance model. H3 coefficient tables and Figure 4 use final flowering date. H6 has one MISM candidate, not an environmental covariate comparison. H8 and germination time spread compare unadjusted and elevation-adjusted 100-seed-mass models within response. H7 is omitted. K is the parameter count; AICc is small-sample-corrected AIC; Delta_AICc and Akaike_weight quantify relative support within a candidate set.",
-  Figure_4 = "Figure 4. Elevational associations and trait relationships in Arabis alpina. Panels: (a) elevation and flowering onset; (b) elevation and duration; (c) onset and final flowering date; (d) within-plot and among-plot onset coefficients for final flowering date; (e) elevation and natural-log MISM; (f) elevation and seed number; (g) MISM and seed number; (h) within-plot and among-plot mass-number coefficients. In c and d, coefficients describe final flowering date. Tests against zero describe completion timing; comparison with one addresses duration. The P value in c tests against zero; the primary H3 test against one gives P = 0.059. Lines and confidence bands show fixed-effect predictions; points in regression panels represent plants. Bars in d and h show 95% confidence intervals; dashed vertical lines mark zero. MISM is in mg per seed; f-h use a log link. Flowering day 1 is 1 June 2021. R2m and R2c denote marginal and conditional R-squared."
+  Table_1 = "Table 1. Mixed-effects estimates for H1-H6 at plant, within-plot and among-plot scales (581 maternal plants). H denotes the hypothesis, \u03b2 the coefficient, SE its standard error, and CI- and CI+ the lower and upper 95% Wald confidence limits. Coefficients are expressed per 100-m elevation increase for H1, H2, H4 and H5, one-day delay in flowering onset for H3, and 1-mg increase in mean individual seed mass (MISM) for H6. MISM is measured in mg per seed. H4 uses natural-log-transformed MISM, and H5-H6 coefficients are on the log-link scale. Onset and MISM predictors in the primary association models were mean-centred. Deviation terms represent individual values minus their plot means, while mean terms represent plot means. Within-plot and among-plot coefficients were estimated jointly, and their repeated R2 values describe the same model. R2m and R2c denote marginal and conditional R2. \u0394Elev (%) denotes percentage change per 100-m elevation increase, calculated as . \u0394mass (%) denotes percentage change in seed number per 1-mg decrease in MISM, calculated as . All H3 coefficients and confidence limits describe final flowering date. Subtracting one from these values gives the corresponding duration coefficient and confidence limits. The primary H3 test against a final-date slope of one gives P = 0.059. Bold coefficients indicate P < 0.001 against zero. Dashes indicate inapplicable entries. Values are rounded for presentation.",
+  Table_S1 = "Table S1. Candidate-model comparisons for H1-H6 and H8. All comparisons use the same 581 maternal plants. K is the number of estimated parameters, logLik the maximised log-likelihood, and AICc the small-sample-corrected Akaike information criterion. \u0394AICc and Akaike weights describe relative support within each comparison. Soil denotes soil PC1, climate denotes June 2021 temperature and precipitation, and MISM denotes mean individual seed mass. Germination models use 100-seed mass. T0, MGR and GP denote time to first germination, mean germination rate and germination percentage, respectively. Time spread is the first-to-last germination interval. H3 AICc rankings were calculated from duration models and are equivalent for final-date models with identical observations, fixed-effect designs including onset, random-effects structures, maximum-likelihood fitting and residual covariance models. H3 coefficients in Table 1 and Fig. 4c describe final flowering date. H7 models are omitted. Weights rounded to zero indicate negligible support. Values are rounded for presentation. AICc ranks relative support. Coefficient stability and numerical eligibility were assessed separately. Table S2 reports focal coefficients and diagnostic exclusions.",
+  Figure_4 = "Figure 4. Elevational and trait associations in Arabis alpina. (a) Flowering onset and (b) flowering duration in relation to elevation. (c) Final flowering date in relation to flowering onset. (d) Mean individual seed mass (MISM, mg per seed) and (e) total seed number per plant in relation to elevation. (f) Total seed number per plant in relation to MISM. Points represent individual plants, lines show model predictions and shaded bands indicate 95% confidence intervals. Solid and dashed lines indicate P < 0.05 and P \u2265 0.05, respectively, for tests of a slope of zero. Slopes (\u03b2) are expressed per 100 m increase in elevation (a, b, d, e), per day of later flowering onset (c) or per mg increase in MISM (f). MISM is natural-log-transformed in (d), and seed-number slopes in (e, f) are on the log-link scale. Flowering dates are expressed as days from 1 June 2021 (day 1). In (c), predictions are based on fixed effects with random intercepts set to zero. The reported P value tests a slope of zero. A slope of one corresponds to constant flowering duration. R2m and R2c denote marginal and conditional R2, respectively."
 )
 publication_response <- function(h) {
   unname(c(
@@ -869,9 +869,6 @@ publication_table_title <- function(stem) {
   if (identical(clean, "S1")) {
     return("Table S1. Candidate-model comparisons for flowering phenology and maternal seed allocation")
   }
-  if (identical(clean, "S2")) {
-    return("Table S2. H7 elevation model results and H8 seed-mass candidate models")
-  }
   clean <- gsub("_", " ", clean)
   clean <- gsub("\\bAICc\\b", "AICc", clean)
   clean <- gsub("\\bR2\\b", "R-squared", clean)
@@ -1678,16 +1675,11 @@ p_h2 <- flowering_panels$p_h2
 p_h3 <- flowering_panels$p_h3
 p_h3_coefficient <- flowering_panels$p_h3_coefficient
 
-# Enlarge the grey-strip subtitles consistently across all eight combined panels.
-combined_panel_subtitle_size <- 16
-# Keep the longest subtitle inside panel (h) at the enlarged font size.
-p_h6_coefficient$data$.panel_heading <- paste(
-  "(h) Seed number ~ MISM", "(within and among plots)",
-  sep = "\n"
-)
+# Enlarge the grey-strip subtitles consistently across both figures.
+combined_panel_subtitle_size <- 15
 combined_panel_theme <- ggplot2::theme(
-  strip.text = ggplot2::element_text(size = combined_panel_subtitle_size),
-  plot.subtitle = ggplot2::element_text(size = combined_panel_subtitle_size)
+  strip.text = ggplot2::element_text(size = combined_panel_subtitle_size, hjust = 0.5),
+  plot.subtitle = ggplot2::element_text(size = combined_panel_subtitle_size, hjust = 0.5)
 )
 p_h1 <- p_h1 + combined_panel_theme
 p_h2 <- p_h2 + combined_panel_theme
@@ -1697,16 +1689,178 @@ p_h4 <- p_h4 + combined_panel_theme
 p_h5 <- p_h5 + combined_panel_theme
 p_h6 <- p_h6 + combined_panel_theme
 p_h6_coefficient <- p_h6_coefficient + combined_panel_theme
-# Centre panels (g) and (h) as a pair, retaining the width of the upper panels.
-flowering_seed_row_1 <- ggpubr::ggarrange(p_h1, p_h2, p_h3, ncol = 3)
-flowering_seed_row_2 <- ggpubr::ggarrange(p_h3_coefficient, p_h4, p_h5, ncol = 3)
-flowering_seed_row_3 <- ggpubr::ggarrange(
-  NULL, p_h6, p_h6_coefficient, NULL,
-  ncol = 4, widths = c(.5, 1, 1, .5)
+# Refresh edge annotations in saved plot objects as well as newly fitted plots.
+# The custom geom anchors the text 1 mm from the plotting panel border.
+set_figure_annotation_inset <- function(plot) {
+  annotation_layers <- which(vapply(
+    plot$layers,
+    function(layer) {
+      inherits(layer$geom, "GeomText") &&
+        all(c("label", "hjust") %in% names(layer$mapping))
+    },
+    logical(1)
+  ))
+  stopifnot(length(annotation_layers) == 1L)
+  i <- annotation_layers[[1L]]
+  plot$layers[[i]]$geom <- geom_text_edge()$geom
+  # geom_text sizes are in millimetres; add one typographic point.
+  plot$layers[[i]]$aes_params$size <-
+    plot$layers[[i]]$aes_params$size + 1 / ggplot2::.pt
+  plot
+}
+
+p_h1 <- set_figure_annotation_inset(p_h1)
+p_h2 <- set_figure_annotation_inset(p_h2)
+p_h3 <- set_figure_annotation_inset(p_h3)
+p_h4 <- set_figure_annotation_inset(p_h4)
+p_h5 <- set_figure_annotation_inset(p_h5)
+p_h6 <- set_figure_annotation_inset(p_h6)
+
+# Reletter the remaining panels and arrange them in two rows.
+reletter_panel <- function(plot, letter) {
+  heading <- function(x) sub("^\\([a-z]\\)", paste0("(", letter, ")"), x)
+  if (".panel_heading" %in% names(plot$data)) {
+    plot$data$.panel_heading <- heading(plot$data$.panel_heading)
+  }
+  if (!is.null(plot$labels$subtitle)) {
+    plot <- plot + ggplot2::labs(subtitle = heading(plot$labels$subtitle))
+  }
+  plot
+}
+
+figure_width_mm <- 477.75
+left_margin_mm <- 3
+right_margin_mm <- 1
+figure_4_panels <- list(
+  p_h1, p_h2, p_h3,
+  reletter_panel(p_h4, "d"), reletter_panel(p_h5, "e"),
+  reletter_panel(p_h6, "f")
 )
-combined_figure_flowering_seed_allocation <- ggpubr::ggarrange(
-  flowering_seed_row_1, flowering_seed_row_2, flowering_seed_row_3,
-  ncol = 1, nrow = 3, heights = c(1, 1, 1)
+make_attached_strip_panels <- function(panels, subtitle_hjust = 0.5, strip_padding = 7) {
+  grobs <- lapply(panels, function(plot) {
+    plot$data$.panel_heading <- trimws(plot$data$.panel_heading)
+    ggplot2::ggplotGrob(plot + ggplot2::theme(
+      strip.text.x.top = ggplot2::element_text(
+        hjust = subtitle_hjust, vjust = 0.5, margin = ggplot2::margin(strip_padding, 4, strip_padding, 4)
+      )
+    ))
+  })
+  strip_rows <- lapply(grobs, function(grob) {
+    grob$layout$t[grepl("^strip-t", grob$layout$name)]
+  })
+  stopifnot(all(lengths(strip_rows) == 1L))
+  strip_height <- do.call(grid::unit.pmax, Map(
+    function(grob, row) grob$heights[row], grobs, strip_rows
+  ))
+  Map(function(grob, row) {
+    grob$heights[row] <- strip_height
+    # Fill the shared strip row so the strip border meets the panel border.
+    strip <- which(grepl("^strip-t", grob$layout$name))
+    grob$grobs[[strip]]$heights <- grid::unit(1, "null")
+    grob
+  }, grobs, strip_rows)
+}
+# Give axis labels two extra points in Figure 4 only.
+figure_4_panels <- lapply(figure_4_panels, function(plot) {
+  axes <- c("axis.text.x", "axis.text.y", "axis.title.x", "axis.title.y")
+  sizes <- lapply(axes, function(axis) {
+    size <- ggplot2::calc_element(axis, plot$theme)$size
+    if (axis == "axis.title.x") {
+      ggplot2::element_text(size = size + 2, margin = ggplot2::margin(t = 4))
+    } else {
+      ggplot2::element_text(size = size + 2)
+    }
+  })
+  axis_title <- function(title) paste0(trimws(title, which = "right"), "\n")
+  plot +
+    ggplot2::labs(
+      x = axis_title(plot$labels$x),
+      y = axis_title(plot$labels$y)
+    ) +
+    do.call(ggplot2::theme, setNames(sizes, axes))
+})
+# Leave room for the last tick label to extend past the plotting border.
+# Use equal margins in all six panels to retain matched plot widths.
+figure_4_panels <- lapply(figure_4_panels, function(plot) {
+  plot + ggplot2::theme(plot.margin = ggplot2::margin(5.5, 14, 5.5, 5.5))
+})
+figure_4_grobs <- make_attached_strip_panels(figure_4_panels)
+combined_figure_flowering_seed_allocation <- cowplot::plot_grid(
+  plotlist = figure_4_grobs, ncol = 3, nrow = 2, align = "hv", axis = "tblr"
+)
+
+# Show the within- and among-plot labels once for both coefficient panels.
+coefficient_y_scale <- function(labels) {
+  ggplot2::scale_y_continuous(
+    breaks = c(1, 2), labels = labels,
+    limits = c(0.5, 3.1), expand = ggplot2::expansion(mult = 0)
+  )
+}
+p_h3_coefficient <- reletter_panel(p_h3_coefficient, "a") +
+  coefficient_y_scale(c("Among plots", "Within plot"))
+p_h6_coefficient <- reletter_panel(p_h6_coefficient, "b") +
+  coefficient_y_scale(NULL) +
+  # Use plain text for both titles so their baselines align.
+  ggplot2::labs(x = "MISM coefficient (log link) [mg seed\u207b\u00b9]\u207b\u00b9") +
+  ggplot2::theme(axis.ticks.y = ggplot2::element_blank())
+coefficient_figure <- cowplot::plot_grid(
+  plotlist = make_attached_strip_panels(
+    lapply(list(p_h3_coefficient, p_h6_coefficient), function(plot) {
+      axes <- c("axis.text.x", "axis.text.y", "axis.title.x", "axis.title.y")
+      axis_sizes <- lapply(axes, function(axis) {
+        size <- ggplot2::calc_element(axis, plot$theme)$size
+        ggplot2::element_text(size = size + 2)
+      })
+      for (i in seq_along(plot$layers)) {
+        if (inherits(plot$layers[[i]]$geom, "GeomPoint")) {
+          plot$layers[[i]]$aes_params$size <-
+            plot$layers[[i]]$aes_params$size + 4 / ggplot2::.pt
+        }
+        if (inherits(plot$layers[[i]]$geom, "GeomErrorbar")) {
+          plot$layers[[i]]$aes_params$linewidth <-
+            plot$layers[[i]]$aes_params$linewidth + 3 / ggplot2::.pt
+        }
+        if (inherits(plot$layers[[i]]$geom, "GeomText")) {
+          plot$layers[[i]]$aes_params$size <-
+            plot$layers[[i]]$aes_params$size + 1 / ggplot2::.pt
+        }
+      }
+      plot + do.call(ggplot2::theme, setNames(axis_sizes, axes)) +
+        ggplot2::theme(
+        axis.title.x = ggplot2::element_text(margin = ggplot2::margin(t = 12)),
+        plot.margin = ggplot2::margin(5.5, 5.5, 10, 10)
+      )
+    }),
+    strip_padding = 12
+  ),
+  ncol = 2, align = "h", axis = "tb"
+)
+
+
+# Increase all rendered text by 4 pt, including annotations and tick labels.
+increase_figure_text_size <- function(grob, points = 4) {
+  if (inherits(grob, "text")) {
+    size <- if (is.null(grob$gp$fontsize)) 12 else grob$gp$fontsize
+    grob$gp$fontsize <- size + points
+  }
+  if (length(grob$grobs)) {
+    grob$grobs <- lapply(grob$grobs, increase_figure_text_size, points = points)
+  }
+  for (i in seq_along(grob$children)) {
+    grob$children[[i]] <- increase_figure_text_size(grob$children[[i]], points)
+  }
+  grob
+}
+combined_figure_grob <- increase_figure_text_size(
+  ggplot2::ggplotGrob(combined_figure_flowering_seed_allocation)
+)
+
+# Keep the export dimensions fixed and reserve the outer margins.
+combined_figure_grob <- gtable::gtable_add_cols(
+  combined_figure_grob, grid::unit(left_margin_mm, "mm"), pos = 0
+)
+combined_figure_grob <- gtable::gtable_add_cols(
+  combined_figure_grob, grid::unit(right_margin_mm, "mm"), pos = -1
 )
 
 ggplot2::ggsave(
@@ -1714,9 +1868,19 @@ ggplot2::ggsave(
     figure_dir_msa,
     "Figure_H1_H6_flowering_seed_allocation.png"
   ),
-  plot = combined_figure_flowering_seed_allocation,
-  width = 350, height = 270, units = "mm", dpi = 600, bg = "white"
+  plot = combined_figure_grob,
+  width = figure_width_mm, height = 294.84, units = "mm", dpi = 600, bg = "white"
 )
+
+ggplot2::ggsave(
+  filename = file.path(figure_dir_msa, "Figure_5_within_among_plot_associations.png"),
+  plot = gtable::gtable_add_cols(
+    increase_figure_text_size(ggplot2::ggplotGrob(coefficient_figure), points = 6),
+    grid::unit(14, "mm"), pos = 0
+  ),
+  width = 427, height = 163.8, units = "mm", dpi = 600, bg = "white"
+)
+writeLines("Figure 5. Within- and among-plot associations in Arabis alpina. (a) Change in final flowering date (days) per one-day delay in flowering onset. (b) Change in expected total seed number per plant on the log-link scale per 1 mg increase in mean individual seed mass (MISM, mg per seed). Within-plot coefficients describe associations with deviations from plot means, and among-plot coefficients describe associations with plot means. Points show estimated coefficients (\u03b2), and horizontal bars show 95% Wald confidence intervals. Vertical dashed lines mark zero. In (a), a coefficient of one corresponds to unchanged flowering duration, and coefficients below one correspond to shorter duration with later onset. Significance symbols refer to tests against zero (ns, P \u2265 0.05; ***, P < 0.001).", file.path(figure_dir_msa, "Figure_5_within_among_plot_associations_caption.txt"), useBytes = TRUE)
 
 # Definitions above are reused in this section.
 render_gt_tables(table_dir_msa, "Maternal seed allocation (H4-H6)")
@@ -1808,6 +1972,7 @@ export_environmental_focal_coefficients <- function() {
     row.names = FALSE,
     fileEncoding = "UTF-8"
   )
+  writeLines("Table S2. Environmental sensitivity models, focal coefficients and numerical diagnostics. Each comparison uses the same 581 maternal plants. H denotes the hypothesis. H1, H2 and H4 coefficients describe elevation associations per 100 m with flowering onset, flowering duration and ln(MISM), respectively. H5 coefficients describe seed-number associations on the log-link scale per 100 m. H3 coefficients describe changes in final flowering date per one-day delay in onset. Climate denotes temperature and precipitation entered jointly, and soil denotes soil PC1. \u03b2 is the focal coefficient, SE its standard error, and CI- and CI+ its lower and upper 95% Wald confidence limits. P0 tests a coefficient of zero. P1 tests an H3 coefficient of one, corresponding to unchanged duration with later onset. Conv., Hess., and SE fin indicate optimiser convergence, a positive-definite Hessian and finite fixed-effect standard errors, respectively. Bound. indicates whether at least one random-intercept variance was near zero. Eligible indicates whether the fit met the numerical criteria for coefficient-level inference. Boundary estimates alone did not exclude a fit. Adjusted H5 estimates are descriptive only because their non-finite standard errors precluded confidence intervals and P values. Dashes indicate unavailable or inapplicable entries. Values are rounded. Table S1 reports model rankings.", file.path("outputs", "maternal_seed_allocation", "tables", "Table S2_caption.txt"), useBytes = TRUE)
   result
 }
 environmental_focal_coefficients <- export_environmental_focal_coefficients()

@@ -736,9 +736,6 @@ publication_table_title <- function(stem) {
   if (identical(clean, "S1")) {
     return("Table S1. Candidate-model comparisons for flowering phenology and maternal seed allocation")
   }
-  if (identical(clean, "S2")) {
-    return("Table S2. H7 elevation model results and H8 seed-mass candidate models")
-  }
   clean <- gsub("_", " ", clean)
   clean <- gsub("\\bAICc\\b", "AICc", clean)
   clean <- gsub("\\bR2\\b", "R-squared", clean)
@@ -1290,6 +1287,17 @@ export_h7_distribution_audit <- function() {
   utils::write.csv(publication, file.path(output, "tables",
     "Table S3.csv"),
     row.names = FALSE, fileEncoding = "UTF-8")
+  writeLines("Table S3. Sensitivity of germination-elevation associations to the response distribution. All fits use the same 581 maternal accessions and block and nested-plot random intercepts. GP, MGR and T0 denote germination percentage, mean germination rate and time to first germination. Coefficients (\u03b2) and standard errors (SE) are expressed per 100-m elevation increase on the log-odds scale for GP, log-mean scale for MGR and cumulative-logit scale for timing responses. CI- and CI+ denote lower and upper 95% Wald confidence limits. Conv., Hess. and SE fin. indicate convergence a positive-definite Hessian and finite fixed-effect standard errors, respectively. Bound. indicates whether at least one random-intercept variance was near zero. U, D and O are DHARMa uniformity, dispersion and outlier P values from 1,000 simulations. Accept. indicates whether a fit met the numerical acceptance criteria. Boundary estimates alone did not exclude a fit. Both ordinal models exceeded the maximum absolute gradient threshold of 0.0001. Their coefficients and standard errors are descriptive, and confidence intervals are withheld. Dashes indicate unavailable or inapplicable entries. Bold coefficients indicate P < 0.001. Values are rounded.", file.path("outputs", "germination_elevation", "tables", "Table S3_caption.txt"), useBytes = TRUE)
   result
 }
 h7_distribution_audit <- export_h7_distribution_audit()
+
+
+# Export the authored germination schematic used in the manuscript.
+germination_schematic_stem <- "Figure_S4_germination_experiment_arabis_alpina"
+germination_schematic_dir <- file.path("outputs", "germination_elevation", "figures")
+dir.create(germination_schematic_dir, recursive = TRUE, showWarnings = FALSE)
+germination_schematic_png <- paste0(germination_schematic_stem, ".png")
+stopifnot(file.copy(file.path("images", germination_schematic_png),
+  file.path(germination_schematic_dir, germination_schematic_png), overwrite = TRUE))
+writeLines("Figure S4. Germination experiment for Arabis alpina. The schematic shows (1) selection of seeds by maternal accession, (2) allocation of 100 seeds to four dishes, (3) the shared temperature and light regime, (4) random placement and repositioning among and within three monitored incubators and (5) daily germination counts and watering to maintain agar moisture.", file.path(germination_schematic_dir, paste0(germination_schematic_stem, "_caption.txt")), useBytes = TRUE)

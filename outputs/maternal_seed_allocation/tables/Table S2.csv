@@ -1,23 +1,22 @@
-Hypothesis,Model,Estimate,SE,CI lower,CI upper,P0,P1,Converged,Positive definite Hessian,Finite fixed effect (SE),Boundary,Eligible,,,
-H1,Elevation,-1.523,0.132,-1.782,-1.263,<0.001,-,Yes,-,Yes,No,Yes,,,
-H1,Elevation + climate,-1.635,0.141,-1.91,-1.359,<0.001,-,Yes,-,Yes,No,Yes,,,
-H1,Elevation + soil,-0.38,0.101,-0.577,-0.182,<0.001,-,Yes,-,Yes,No,Yes,,,
-H1,Elevation + climate + soil,-0.362,0.131,-0.618,-0.106,<0.01,-,Yes,-,Yes,No,Yes,,,
-H2,Elevation,2.626,0.42,1.801,3.45,<0.001,-,Yes,-,Yes,No,Yes,,,
-H2,Elevation + climate,2.792,0.434,1.941,3.644,<0.001,-,Yes,-,Yes,No,Yes,,,
-H2,Elevation + soil,-1.033,0.167,-1.36,-0.706,<0.001,-,Yes,-,Yes,No,Yes,,,
-H2,Elevation + climate + soil,-1.235,0.187,-1.602,-0.869,<0.001,-,Yes,-,Yes,No,Yes,,,
-H3,Onset,0.947,0.028,0.892,1.002,<0.001,0.059,Yes,-,Yes,No,Yes,,,
-H3,Onset + elevation,0.95,0.028,0.895,1.005,<0.001,0.074,Yes,-,Yes,No,Yes,,,
-H3,Onset + elevation + climate,0.95,0.028,0.895,1.005,<0.001,0.075,Yes,-,Yes,No,Yes,,,
-H3,Onset + elevation + soil,0.952,0.028,0.897,1.007,<0.001,0.089,Yes,-,Yes,No,Yes,,,
-H3,Onset + elevation + climate + soil,0.952,0.028,0.897,1.007,<0.001,0.085,Yes,-,Yes,No,Yes,,,
-H4,Elevation,-0.002,0.004,-0.009,0.006,0.613,-,Yes,-,Yes,Yes,Yes,,,
-H4,Elevation + climate,0,0.006,-0.01,0.011,0.947,-,Yes,-,Yes,Yes,Yes,,,
-H4,Elevation + soil,-0.024,0.01,-0.043,-0.004,<0.05,-,Yes,-,Yes,Yes,Yes,,,
-H4,Elevation + climate + soil,-0.034,0.015,-0.064,-0.005,<0.05,-,Yes,-,Yes,Yes,Yes,,,
-H5,Elevation,0.008,0.008,-0.007,0.023,0.283,-,Yes,Yes,Yes,Yes,Yes,,,
-H5,Elevation + climate,0.008,-,-,-,-,-,Yes,Yes,No,Yes,No,,,
-H5,Elevation + soil,0.004,-,-,-,-,-,Yes,Yes,No,Yes,No,,,
-H5,Elevation + climate + soil,-0.001,-,-,-,-,-,Yes,Yes,No,Yes,No,,,
-,,,,,,,,,,,,,,,
+"Hypothesis","Model","Response","Term","Predictor_increment","Estimate","SE","CI_low","CI_high","P_zero","P_duration","N","Converged","Positive_definite_Hessian","Finite_fixed_effect_SE","Boundary","Eligible"
+"H1","Elevation","Flowering onset","Elevation_z","100 m elevation","-1.523","0.132","-1.782","-1.263","<0.001","NA",581,TRUE,NA,TRUE,FALSE,TRUE
+"H1","Elevation + climate","Flowering onset","Elevation_z","100 m elevation","-1.635","0.141","-1.910","-1.359","<0.001","NA",581,TRUE,NA,TRUE,FALSE,TRUE
+"H1","Elevation + soil","Flowering onset","Elevation_z","100 m elevation","-0.380","0.101","-0.577","-0.182","<0.001","NA",581,TRUE,NA,TRUE,FALSE,TRUE
+"H1","Elevation + climate + soil","Flowering onset","Elevation_z","100 m elevation","-0.362","0.131","-0.618","-0.106","<0.01","NA",581,TRUE,NA,TRUE,FALSE,TRUE
+"H2","Elevation","Flowering duration","Elevation_z","100 m elevation","2.626","0.420","1.801","3.450","<0.001","NA",581,TRUE,NA,TRUE,FALSE,TRUE
+"H2","Elevation + climate","Flowering duration","Elevation_z","100 m elevation","2.792","0.434","1.941","3.644","<0.001","NA",581,TRUE,NA,TRUE,FALSE,TRUE
+"H2","Elevation + soil","Flowering duration","Elevation_z","100 m elevation","-1.033","0.167","-1.360","-0.706","<0.001","NA",581,TRUE,NA,TRUE,FALSE,TRUE
+"H2","Elevation + climate + soil","Flowering duration","Elevation_z","100 m elevation","-1.235","0.187","-1.602","-0.869","<0.001","NA",581,TRUE,NA,TRUE,FALSE,TRUE
+"H3","Onset","Final flowering date","Onset_centered","1 onset day","0.947","0.028","0.892","1.002","<0.001","0.059",581,TRUE,NA,TRUE,FALSE,TRUE
+"H3","Onset + elevation","Final flowering date","Onset_centered","1 onset day","0.950","0.028","0.895","1.005","<0.001","0.074",581,TRUE,NA,TRUE,FALSE,TRUE
+"H3","Onset + elevation + climate","Final flowering date","Onset_centered","1 onset day","0.950","0.028","0.895","1.005","<0.001","0.075",581,TRUE,NA,TRUE,FALSE,TRUE
+"H3","Onset + elevation + soil","Final flowering date","Onset_centered","1 onset day","0.952","0.028","0.897","1.007","<0.001","0.089",581,TRUE,NA,TRUE,FALSE,TRUE
+"H3","Onset + elevation + climate + soil","Final flowering date","Onset_centered","1 onset day","0.952","0.028","0.897","1.007","<0.001","0.085",581,TRUE,NA,TRUE,FALSE,TRUE
+"H4","Elevation","ln(MISM)","Elevation_z","100 m elevation","-0.002","0.004","-0.009","0.006","0.613","NA",581,TRUE,NA,TRUE,TRUE,TRUE
+"H4","Elevation + climate","ln(MISM)","Elevation_z","100 m elevation","0.000","0.006","-0.010","0.011","0.947","NA",581,TRUE,NA,TRUE,TRUE,TRUE
+"H4","Elevation + soil","ln(MISM)","Elevation_z","100 m elevation","-0.024","0.010","-0.043","-0.004","<0.05","NA",581,TRUE,NA,TRUE,TRUE,TRUE
+"H4","Elevation + climate + soil","ln(MISM)","Elevation_z","100 m elevation","-0.034","0.015","-0.064","-0.005","<0.05","NA",581,TRUE,NA,TRUE,TRUE,TRUE
+"H5","Elevation","Seed number","Elevation_z","100 m elevation","0.008","0.008","-0.007","0.023","0.283","NA",581,TRUE,TRUE,TRUE,TRUE,TRUE
+"H5","Elevation + climate","Seed number","Elevation_z","100 m elevation","0.008","NA","NA","NA","NA","NA",581,TRUE,TRUE,FALSE,TRUE,FALSE
+"H5","Elevation + soil","Seed number","Elevation_z","100 m elevation","0.004","NA","NA","NA","NA","NA",581,TRUE,TRUE,FALSE,TRUE,FALSE
+"H5","Elevation + climate + soil","Seed number","Elevation_z","100 m elevation","-0.001","NA","NA","NA","NA","NA",581,TRUE,TRUE,FALSE,TRUE,FALSE

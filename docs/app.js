@@ -45,7 +45,7 @@ if (typeof document !== 'undefined') {
    const index = files.indexOf(f);
    const historical = f.path.startsWith('data/migration_records/');
    const previewable = f.inRepository && f.size < 800000 && ['r','csv','txt','md','json','py'].includes(f.extension);
-   return `<tr><td><strong>${escapeHtml(f.name)}</strong><span class="file-path">${escapeHtml(f.path)}</span>${historical?'<br><span class="badge">Historical record</span>':''}</td><td>${escapeHtml(f.extension.toUpperCase() || 'PROJECT')}</td><td>${formatSize(f.size)}</td><td><div class="file-actions">${previewable?`<button data-preview="${index}">Preview</button>`:''}${f.inRepository?`<a href="${escapeHtml(f.view)}" target="_blank" rel="noopener">View ↗</a>`:''}<a href="${escapeHtml(f.download)}">${f.inRepository?'Download ↓':'Get bundle ↓'}</a></div></td></tr>`;
+   return `<tr><td><strong>${escapeHtml(f.name)}</strong><span class="file-path">${escapeHtml(f.path)}</span>${historical?'<br><span class="badge">Historical record</span>':''}</td><td>${escapeHtml(f.extension.toUpperCase() || 'PROJECT')}</td><td>${formatSize(f.size)}</td><td><div class="file-actions">${previewable?`<button data-preview="${index}">Preview</button>`:''}${f.inRepository?`<a href="${escapeHtml(f.view)}" target="_blank" rel="noopener">View ↗</a>`:''}<a href="${escapeHtml(f.download)}">${f.inRepository?'Download ↓':(f.bundle === 'analysis-updates-20261115.zip' ? 'Get update ZIP ↓' : 'Get bundle ↓')}</a></div></td></tr>`;
   }).join('') || '<tr><td colspan="4">No files match these filters. Try a different search or include historical records.</td></tr>';
   $('page-info').textContent=`Page ${state.page+1} of ${pages}`;
   $('previous').disabled=state.page===0;
@@ -105,7 +105,7 @@ if (typeof document !== 'undefined') {
       document.getElementById('figure-viewer-caption').textContent = caption;
       const download = document.getElementById('figure-viewer-download');
       download.href = link.getAttribute('href');
-      download.download = 'Arabis_alpina_20261026_Figure_' + number + '.' + link.getAttribute('href').split('.').pop();
+      download.download = 'Arabis_alpina_20261115_Figure_' + number + '.' + link.getAttribute('href').split('.').pop();
       viewer.showModal();
     });
   });

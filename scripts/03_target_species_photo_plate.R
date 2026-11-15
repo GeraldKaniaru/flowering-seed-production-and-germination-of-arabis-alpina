@@ -66,7 +66,7 @@ prepare_panel <- function(path, label) {
       gravity = "northwest",
       location = "+42+33",
       font = "Arial",
-      size = 120,
+      size = 102,
       weight = 700,
       color = "black",
       boxcolor = "rgba(255,255,255,0.72)"
@@ -112,7 +112,7 @@ figure_geometry <- paste0(figure_width_px, "x", figure_height_px)
 plate <- image_resize(plate, paste0(figure_geometry, "^")) |>
   image_extent(figure_geometry, gravity = "center", color = "white")
 
-output_base <- file.path(output_dir, "Figure_2_target_species_arabis_alpina")
+output_base <- file.path(output_dir, "Figure_2_morphology_arabis_alpina")
 image_write(image_resize(plate, "1600x"), paste0(output_base, "_preview.jpg"),
   format = "jpeg", quality = 92
 )
@@ -129,3 +129,5 @@ image_write(plate, paste0(output_base, ".tiff"),
 )
 
 message("Created target-species photographic plate: ", paste0(output_base, ".png"))
+
+writeLines("Figure 2. Morphology of Arabis alpina. (a) Plant on rocky substrate (Giovanni Fontana). (b) Raceme with white, four-petalled flowers (Jacek Pietruszewski). (c) Developing siliques above the basal rosette (Johannes Hansen). (d) Dehisced siliques with mature brown seeds (karin_schrieber). Photographs are from iNaturalist (https://www.inaturalist.org) and are shown at different scales.", paste0(output_base, "_caption.txt"), useBytes = TRUE)

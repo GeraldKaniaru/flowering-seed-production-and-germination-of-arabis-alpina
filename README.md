@@ -30,3 +30,7 @@ The original private research repository is separate from this public export. Th
 - [Images](https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/releases/download/analysis-2026-10-26/analysis-images.zip) - 26 October 2026
 
 Run `Publish-Updates.cmd` from your working analysis folder to publish saved changes. See [PUBLISHING.md](PUBLISHING.md). The command never runs R models.
+
+## November 2026 update
+
+[Download the 15 November update ZIP](https://github.com/GeraldKaniaru/flowering-seed-production-and-germination-of-arabis-alpina/releases/download/analysis-update-20261115/analysis-updates-20261115.zip). Extract it over the complete snapshots to apply the revised scripts, figures, and tables. The figures are numbered according to the 15 November manuscript.

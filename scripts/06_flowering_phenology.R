@@ -3,7 +3,7 @@
 # Local definitions: this script never sources another R file.
 publication_root <- "outputs"
 publication_captions <- c(
-  Figure_S6 = "Figure S6. Environmental variation across 27 source plots. Panels show (a) June 2021 mean temperature, (b) total precipitation and (c) standardised soil PC1 against elevation, and (d) soil-variable PC1 loadings. Points in a-c represent plots; lines show separate ordinary linear regressions and shading shows 95% confidence intervals. C, N, P and EC denote organic carbon, total nitrogen, extractable phosphorus and electrical conductivity. Equation x is elevation in metres."
+  Figure_3 = "Figure 3. Environmental variation across 27 source plots. (a) June 2021 mean temperature, (b) June 2021 total precipitation and (c) standardised soil PC1 by elevation, and (d) soil PC1 loadings. In (a-c), points are plots, lineas are linear fits and shading indicates 95% confidence intervals. In (d), C, N, P and EC denote organic carbon, total nitrogen, extractable phosphorus and electrical conductivity. In the fitted equations, x is elevation in metres."
 )
 publication_response <- function(h) {
   unname(c(
@@ -87,7 +87,7 @@ publication_flowering_tables <- function() {
 }
 publication_figure_exports <- function() {
   from <- file.path(publication_root, "flowering_phenology/figures/Figure1_environment_gradients_and_soil_PC1")
-  to <- file.path(dirname(from), "Figure_S6_environment_gradients_and_soil_PC1")
+  to <- file.path(dirname(from), "Figure_3_environment_gradients_and_soil_PC1")
   records <- list()
   for (ext in c("png", "pdf", "tiff")) {
     input <- paste0(from, ".", ext)
@@ -109,19 +109,19 @@ publication_figure_exports <- function() {
       if (!identical(input_path, output_path)) {
         stopifnot(file.copy(input, output, overwrite = TRUE))
       }
-      records[[length(records) + 1L]] <- data.frame(Number = "Figure S6", Format = ext, File = output)
+      records[[length(records) + 1L]] <- data.frame(Number = "Figure 3", Format = ext, File = output)
     }
   }
   if (!length(records)) {
     return(invisible(NULL))
   }
-  writeLines(publication_captions[["Figure_S6"]], paste0(to, "_caption.txt"))
-  writeLines(publication_captions[["Figure_S6"]], paste0(from, "_caption.txt"))
+  writeLines(publication_captions[["Figure_3"]], paste0(to, "_caption.txt"))
+  writeLines(publication_captions[["Figure_3"]], paste0(from, "_caption.txt"))
   manifest_file <- file.path(publication_root, "Publication_figure_manifest.csv")
   updated <- do.call(rbind, records)
   if (file.exists(manifest_file)) {
     previous <- utils::read.csv(manifest_file, stringsAsFactors = FALSE)
-    previous <- previous[previous$Number != "Figure S6", , drop = FALSE]
+    previous <- previous[previous$Number != "Figure 3", , drop = FALSE]
     updated <- rbind(previous[, names(updated), drop = FALSE], updated)
   }
   utils::write.csv(updated, manifest_file, row.names = FALSE)
@@ -1030,9 +1030,6 @@ publication_table_title <- function(stem) {
   }
   if (identical(clean, "S1")) {
     return("Table S1. Candidate-model comparisons for flowering phenology and maternal seed allocation")
-  }
-  if (identical(clean, "S2")) {
-    return("Table S2. H7 elevation model results and H8 seed-mass candidate models")
   }
   clean <- gsub("_", " ", clean)
   clean <- gsub("\\bAICc\\b", "AICc", clean)

@@ -3,8 +3,8 @@
 # Local definitions: this script never sources another R file.
 publication_root <- "outputs"
 publication_captions <- c(
-  Table_3 = "Table 3. Baseline and projected reproductive trait summaries and changes under mid-century scenarios. Baseline values are conditional model predictions for June 2021; future values refer to 2041-2060 and are averaged equally across three climate models. For MISM, exponentiating log-scale predictions without a retransformation correction yields plant-level conditional medians; reported summaries average those medians, rather than estimating arithmetic expected seed mass. Other traits summarise expected values conditional on their predictors. Gaussian projections retain fitted block and plot effects. For seed number, two negligible random-intercept components were removed after the nested model failed numerical checks; the resolved model retains the NB2 family, log link and all environmental predictors. Change is future minus baseline. Flowering onset and duration are in days, MISM in mg per seed, and seed number in seeds per plant. Flowering duration is retained as the projection response; the H3 final-date re-expression does not change these projections. Confidence limits are 95% percentile bootstrap intervals for scenario mean changes, based on 1,000 retained replicates per trait with no refitting errors or non-finite predictions. Retention does not establish that all refits passed convergence-warning, Hessian or singularity checks. Equal model weighting does not quantify the full uncertainty among future climate trajectories. Reported values were rounded independently.",
-  Figure_S7 = "Figure S7. Projected changes in Arabis alpina reproductive traits for 2041-2060 relative to June 2021. Panels show (a) flowering onset, (b) duration, (c) MISM and (d) seed number. Brown and yellow identify SSP2-4.5 and SSP5-8.5. Violin widths show densities of scenario mean changes from 1,000 parametric bootstrap replicates. Points show model-estimated changes averaged equally across three climate models. Bars are 95% percentile bootstrap intervals; dashed lines mark zero."
+  Table_3 = "Table 3. Modelled baseline means for June 2021 and projected means and changes for 2041-2060. Projections weight three climatic models equally. MISM is the average of conditional median masses from exponentiated log-scale predictions. Change is future minus baseline. Units are days for onset and duration, mg per seed for MISM and seeds per plant for seed number. CI- and CI+ are the 95% percentile bootstrap limits for mean changes, using 1,000 replicates per trait. Means and changes were rounded independently. Seed-number estimates use the revised nbinom2 model without random intercepts. All 1,000 seed-number refits passed numerical checks.",
+  Figure_S6 = "Figure S6. Projected changes in Arabis alpina reproductive traits for 2041-2060 relative to June 2021. (a) Flowering onset. (b) Flowering duration. (c) Mean individual seed mass (MISM). (d) Total seed number. Brown and yellow indicate SSP2-4.5 and SSP5-8.5. Violin widths show the density of mean changes over 1,000 parametric bootstrap replicates. Points are estimated mean changes, weighted equally across three climate models, and bars are 95% percentile bootstrap intervals. Annotations give changes and confidence limits. Vertical dashed lines mark zero. Seed-number estimates use the revised nbinom2 model without random intercepts."
 )
 publication_table_3 <- function() {
   td <- file.path(publication_root, "projected_trait_changes_mid_century", "tables")
@@ -62,7 +62,7 @@ publication_render_tables <- function() {
 }
 publication_figure_exports <- function() {
   from <- file.path(publication_root, "projected_trait_changes_mid_century/figures/Figure_RQ6_bootstrap_trait_changes")
-  to <- file.path(dirname(from), "Figure_S7_bootstrap_trait_changes")
+  to <- file.path(dirname(from), "Figure_S6_bootstrap_trait_changes")
   records <- list()
   for (ext in c("png", "pdf", "tiff")) {
     input <- paste0(from, ".", ext)
@@ -84,19 +84,19 @@ publication_figure_exports <- function() {
       if (!identical(input_path, output_path)) {
         stopifnot(file.copy(input, output, overwrite = TRUE))
       }
-      records[[length(records) + 1L]] <- data.frame(Number = "Figure S7", Format = ext, File = output)
+      records[[length(records) + 1L]] <- data.frame(Number = "Figure S6", Format = ext, File = output)
     }
   }
   if (!length(records)) {
     return(invisible(NULL))
   }
-  writeLines(publication_captions[["Figure_S7"]], paste0(to, "_caption.txt"))
-  writeLines(publication_captions[["Figure_S7"]], paste0(from, "_caption.txt"))
+  writeLines(publication_captions[["Figure_S6"]], paste0(to, "_caption.txt"))
+  writeLines(publication_captions[["Figure_S6"]], paste0(from, "_caption.txt"))
   manifest_file <- file.path(publication_root, "Publication_figure_manifest.csv")
   updated <- do.call(rbind, records)
   if (file.exists(manifest_file)) {
     previous <- utils::read.csv(manifest_file, stringsAsFactors = FALSE)
-    previous <- previous[previous$Number != "Figure S7", , drop = FALSE]
+    previous <- previous[previous$Number != "Figure S6", , drop = FALSE]
     updated <- rbind(previous[, names(updated), drop = FALSE], updated)
   }
   utils::write.csv(updated, manifest_file, row.names = FALSE)
@@ -1157,7 +1157,9 @@ change_panel <- function(trait) {
         margin = margin(2, 2, 2, 2, unit = "mm")
       ),
       axis.text = element_text(colour = "black", size = 12),
-      panel.grid = element_blank(),
+      panel.border = element_rect(colour = "grey40", fill = NA, linewidth = .5),
+      panel.grid.major = element_line(colour = "grey90", linewidth = .3),
+      panel.grid.minor = element_blank(),
       legend.text = element_text(size = 12, color = "black"),
       legend.title = element_text(face = "bold", size = 12, color = "black"),
       plot.margin = margin(.5, 2, .5, 2, unit = "mm")
@@ -1187,7 +1189,8 @@ p_change <- ggpubr::annotate_figure(
     size = 13, face = "bold", family = "Arial"
   )
 )
-save_figure(p_change, "Figure_RQ6_projected_trait_changes_elevation", 220, 170)
+save_figure(p_change, "Figure_7_baseline_and_projected_reproductive_traits", 220, 170)
+writeLines("Figure 7. Baseline and projected reproductive traits of Arabis alpina in June 2021 and 2041-2060. (a) Flowering onset. (b) Flowering duration. (c) Mean individual seed mass (MISM). (d) Total seed number per plant. Grey open points show baseline means. Brown and yellow filled points show equally weighted ensemble means under SSP2-4.5 and SSP5-8.5. Open future points show individual climate-model means. Lines connect baseline and future means. Bars span the 2.5th-97.5th percentiles of plant-level predictions. Annotations give absolute changes and, except for onset, percentage changes relative to baseline. Onset uses days because its percentage change depends on the calendar origin. Table 3 and Fig. S6 give bootstrap confidence intervals for mean changes. Seed-number projections use the revised nbinom2 model with all environmental predictors and without random intercepts.", file.path(figure_dir_mc, "Figure_7_baseline_and_projected_reproductive_traits_caption.txt"), useBytes = TRUE)
 message(
   "RQ5 conditional mid-century projections complete with ", n_boot,
   " requested bootstrap replicates. Outputs: ", output_dir_mc
@@ -1269,9 +1272,6 @@ publication_table_title <- function(stem) {
   }
   if (identical(clean, "S1")) {
     return("Table S1. Candidate-model comparisons for flowering phenology and maternal seed allocation")
-  }
-  if (identical(clean, "S2")) {
-    return("Table S2. H7 elevation model results and H8 seed-mass candidate models")
   }
   clean <- gsub("_", " ", clean)
   clean <- gsub("\\bAICc\\b", "AICc", clean)

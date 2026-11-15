@@ -3,8 +3,8 @@
 # Local definitions: this script never sources another R file.
 publication_root <- "outputs"
 publication_captions <- c(
-  Table_2 = "Table 2. Source elevation, 100-seed mass and germination responses in 581 maternal accessions. H7a is time to first germination (T0), H7b mean germination rate (MGR), H7c germination percentage (GP), and H7d time spread (Tg-T0). H7d has no directional prediction. H8a, H8b and H8c concern T0, MGR and GP, respectively; H8 time spread also has no directional prediction. Coefficients and confidence limits are per 100-m source-elevation increase for H7 and per 1-mg increase in measured 100-seed mass for H8. Timing responses are in days, MGR in inverse days and GP in percentage points. P values test coefficients against zero. Each H8 response has an unadjusted and an elevation-adjusted model; Table S1 compares these pairs. Marginal_R2 and Conditional_R2 describe marginal and conditional R-squared. Convergence and singularity flags are retained from the fitted models.",
-  Table_S1 = "Table S1. Candidate-model comparisons for H1-H6 and seed-mass-germination models. Each comparison uses the same 581 maternal plants and random-effects structure. H1, H2, H4 and H5 each compare elevation alone, elevation + climate, elevation + soil, and elevation + climate + soil. Climate includes temperature and precipitation jointly; soil is soil PC1. H3 compares onset alone, onset + elevation, onset + elevation + climate, onset + elevation + soil, and onset + elevation + climate + soil. H3 AICc values were calculated from duration models and are equivalent for final flowering date with the same observations, onset predictor, covariates, random effects, maximum-likelihood fitting and residual covariance model. H3 coefficient tables and Figure 4 use final flowering date. H6 has one MISM candidate, not an environmental covariate comparison. H8 and germination time spread compare unadjusted and elevation-adjusted 100-seed-mass models within response. H7 is omitted. K is the parameter count; AICc is small-sample-corrected AIC; Delta_AICc and Akaike_weight quantify relative support within a candidate set."
+  Table_2 = "Table 2. Gaussian mixed-effects estimates for H7-H8, including elevation-adjusted seed mass models. H denotes the hypothesis, and Y the response. Responses are time to first germination (T0), time spread, mean germination rate (MGR) and germination percentage (GP). \u03b2 is the coefficient, SE its standard error, and CI- and CI+ the lower and upper 95% Wald confidence limits. Coefficients are expressed per 100-m elevation increase for H7 and per 1-mg increase in mean-centred 100-seed mass for H8. Units are days for T0 and time spread, day-1 for MGR and percentage points for GP. R2m and R2c denote marginal and conditional R2. AIC values are comparable only among models fitted to the same response and observations. ED denotes the predicted direction (+, positive; -, negative; *, no prediction). DA records agreement of the coefficient sign with that prediction, irrespective of statistical support. Dashes indicate no directional prediction. All models converged. Bold coefficients indicate P < 0.001 against zero. Values are rounded.",
+  Table_S1 = "Table S1. Candidate-model comparisons for H1-H6 and H8. All comparisons use the same 581 maternal plants. K is the number of estimated parameters, logLik the maximised log-likelihood, and AICc the small-sample-corrected Akaike information criterion. \u0394AICc and Akaike weights describe relative support within each comparison. Soil denotes soil PC1, climate denotes June 2021 temperature and precipitation, and MISM denotes mean individual seed mass. Germination models use 100-seed mass. T0, MGR and GP denote time to first germination, mean germination rate and germination percentage, respectively. Time spread is the first-to-last germination interval. H3 AICc rankings were calculated from duration models and are equivalent for final-date models with identical observations, fixed-effect designs including onset, random-effects structures, maximum-likelihood fitting and residual covariance models. H3 coefficients in Table 1 and Fig. 4c describe final flowering date. H7 models are omitted. Weights rounded to zero indicate negligible support. Values are rounded for presentation. AICc ranks relative support. Coefficient stability and numerical eligibility were assessed separately. Table S2 reports focal coefficients and diagnostic exclusions."
 )
 publication_response <- function(h) {
   unname(c(
@@ -826,9 +826,6 @@ local({
     if (identical(clean, "S1")) {
       return("Table S1. Candidate-model comparisons for flowering phenology and maternal seed allocation")
     }
-    if (identical(clean, "S2")) {
-      return("Table S2. H7 elevation model results and H8 seed-mass candidate models")
-    }
     clean <- gsub("_", " ", clean)
     clean <- gsub("\\bAICc\\b", "AICc", clean)
     clean <- gsub("\\bR2\\b", "R-squared", clean)
@@ -1192,18 +1189,19 @@ local({
       }, character(1))
       sprintf("beta == %s*','~~R[m]^2 == '%.3f'*','~~R[c]^2 == '%.3f'~~'%s'", number, rm, rc, significance)
     }
-    shared_theme <- ggplot2::theme_bw(base_size = 11, base_family = "Arial") +
+    shared_theme <- ggplot2::theme_bw(base_size = 12, base_family = "Arial") +
       ggplot2::theme(
         panel.grid.minor = ggplot2::element_blank(),
         panel.grid.major.y = ggplot2::element_blank(),
         panel.grid.major.x = ggplot2::element_line(colour = "grey92", linewidth = .3),
         panel.border = ggplot2::element_rect(colour = "black", linewidth = .6),
-        axis.text = ggplot2::element_text(size = 12, colour = "black"),
-        axis.title = ggplot2::element_text(size = 13, face = "bold"),
+        axis.text = ggplot2::element_text(size = 13, colour = "black"),
+        axis.text.x = ggplot2::element_text(size = 14),
+        axis.title = ggplot2::element_text(size = 15, face = "bold"),
         strip.background = ggplot2::element_rect(fill = "grey85", colour = "black", linewidth = .6),
-        strip.text = ggplot2::element_text(size = 13, face = "bold", hjust = .5),
+        strip.text = ggplot2::element_text(size = 15, face = "bold", hjust = .5),
         legend.position = "bottom", legend.direction = "horizontal",
-        legend.justification = "center", legend.text = ggplot2::element_text(size = 14),
+        legend.justification = "center", legend.text = ggplot2::element_text(size = 15),
         legend.key.height = grid::unit(.5, "cm")
       )
     y_scale <- function() {
@@ -1214,6 +1212,8 @@ local({
     }
     h7 <- h7_results
     h7$Row_y <- row_position(h7$Response)
+    # Keep the larger annotations clear of the panel edges.
+    h7$Label_x <- pmin(pmax(h7$Estimate_per_100_m, -3.5), 0)
     h7$Label_y <- h7$Row_y - 3.5
     h7_p <- suppressWarnings(as.numeric(h7$P))
     h7_p[grepl("<", h7$P, fixed = TRUE)] <- .0005
@@ -1231,8 +1231,8 @@ local({
         size = point_size,
         stroke = .8, show.legend = TRUE
       ) +
-      ggplot2::geom_text(ggplot2::aes(y = Label_y, label = Label),
-        parse = TRUE, hjust = .5, size = 4.6, family = "Arial", colour = "black", show.legend = FALSE
+      ggplot2::geom_text(ggplot2::aes(x = Label_x, y = Label_y, label = Label),
+        parse = TRUE, hjust = .5, size = 4.6 + 1 / ggplot2::.pt, family = "Arial", colour = "black", show.legend = FALSE
       ) +
       ggplot2::scale_colour_manual(values = legend_colours, limits = legend_labels, drop = FALSE) +
       ggplot2::scale_fill_manual(values = legend_colours, limits = legend_labels, drop = FALSE) +
@@ -1254,6 +1254,7 @@ local({
     )
     h8$Row_y <- row_position(h8$Response)
     h8$Point_y <- h8$Row_y + ifelse(as.integer(h8$Model_label) == 1, .8, -.8)
+    h8$Label_x <- pmin(pmax(h8$Estimate_per_mg, -0.025), 0.055)
     h8$Label_y <- h8$Row_y - 3.8 - (as.integer(h8$Model_label) - 1) * 4.0
     h8$Label <- annotate(h8$Estimate_per_mg, h8$Marginal_R2, h8$Conditional_R2, h8$P_value)
     h8$Panel_title <- "(b) Germination ~ seed mass"
@@ -1268,8 +1269,8 @@ local({
         size = point_size,
         stroke = .8, show.legend = TRUE
       ) +
-      ggplot2::geom_text(ggplot2::aes(y = Label_y, label = Label),
-        parse = TRUE, hjust = .5, size = 4.6, family = "Arial", show.legend = FALSE
+      ggplot2::geom_text(ggplot2::aes(x = Label_x, y = Label_y, label = Label),
+        parse = TRUE, hjust = .5, size = 4.6 + 1 / ggplot2::.pt, family = "Arial", show.legend = FALSE
       ) +
       ggplot2::scale_colour_manual(values = legend_colours, limits = legend_labels, drop = FALSE) +
       ggplot2::scale_fill_manual(values = legend_colours, limits = legend_labels, drop = FALSE) +
@@ -1290,11 +1291,14 @@ local({
         axis.text.y = ggplot2::element_blank(),
         axis.ticks.y = ggplot2::element_blank()
       )
-    patchwork::wrap_plots(a, b, ncol = 2, widths = c(1, 1), guides = "collect") &
+    (patchwork::wrap_plots(a, b, ncol = 2, widths = c(1, 1), guides = "collect") &
       ggplot2::theme(
         legend.position = "bottom", legend.direction = "horizontal",
         legend.justification = "center"
-      )
+      )) +
+      patchwork::plot_annotation(theme = ggplot2::theme(
+        plot.margin = ggplot2::margin(5.5, 5.5 + 72.27 / 25.4, 5.5, 5.5)
+      ))
   }
   # End of combined h7-h8 coefficient figure: layout and annotations.
 
@@ -1302,13 +1306,15 @@ local({
     read.csv(file.path(table_dir, "Table_H7_model_results.csv")),
     read.csv(file.path(mass_dir, "tables", "Table_H8_model_results.csv"))
   )
-  ggsave(file.path(mass_dir, "figures", "Figure_H7_H8_sensitivity.png"), sensitivity,
+  ggsave(file.path(mass_dir, "figures", "Figure_6_germination_elevation_seed_mass.png"), sensitivity,
     width = 300, height = 150, units = "mm", dpi = 600, bg = "white"
   )
 
-  ggsave(file.path(mass_dir, "figures", "Figure_H7_H8_sensitivity.pdf"), sensitivity,
+  ggsave(file.path(mass_dir, "figures", "Figure_6_germination_elevation_seed_mass.pdf"), sensitivity,
     width = 300, height = 150, units = "mm", device = cairo_pdf, bg = "white"
   )
+
+  writeLines("Figure 6. Associations of germination with source elevation and 100-seed mass in Arabis alpina. (a) Elevation-only models. (b) Mass-only and elevation-adjusted mass models. Circles, squares and diamonds distinguish the three model sets in that order. Points are coefficients and bars are 95% confidence intervals. Dashed lines mark zero. Coefficients are per 100 m in (a) and per mg of 100-seed mass in (b). Responses are time to first germination (T0; days), time spread (Tg \u2013 T0, days), mean germination rate (MGR, day-1) and germination percentage (GP, coefficients in percentage points). Annotations give coefficients (\u03b2), marginal R2 (R2m), conditional R2 (R2c) and significance (ns, P \u2265 0.05, and ***, P < 0.001).", file.path(mass_dir, "figures", "Figure_6_germination_elevation_seed_mass_caption.txt"), useBytes = TRUE)
 
   h7_model_results_file <- file.path(table_dir, "Table_H7_model_results.csv")
   h8_model_results_file <- file.path(mass_dir, "tables", "Table_H8_model_results.csv")
@@ -1566,14 +1572,14 @@ local({
       theme_minimal(base_size = 12, base_family = "Arial") +
       theme(panel.grid.minor = element_blank())
     for (ext in c("png", "pdf", "tiff")) {
-      ggsave(file.path(summary_dir, "figures", paste0("Figure_12_summary_all_associations.", ext)),
+      ggsave(file.path(summary_dir, "figures", paste0("Figure_summary_all_associations.", ext)),
         p_overview,
         width = 220, height = 170, units = "mm", dpi = 300, device = if (ext == "pdf") grDevices::cairo_pdf else NULL
       )
     }
     writeLines(
-      "Figure 12. Descriptive overview of primary association estimates across reproductive stages. Points show each coefficient divided by its standard error; zero indicates the hypothesis null (one for H3 final-date slopes, zero otherwise). The underlying coefficients and confidence intervals are supplied in Table_all_primary_associations.csv. All germination plants experienced 25/10\u00b0C (8/16 h), 60% eRH and 8-hour light/16-hour darkness. This overview does not formally test reproductive coordination or differences among coefficients.",
-      file.path(summary_dir, "Figure_12_caption.txt")
+      "Descriptive overview of primary association estimates across reproductive stages. Points show each coefficient divided by its standard error; zero indicates the hypothesis null (one for H3 final-date slopes, zero otherwise). The underlying coefficients and confidence intervals are supplied in Table_all_primary_associations.csv. All germination plants experienced 25/10\u00b0C (8/16 h), 60% eRH and 8-hour light/16-hour darkness. This overview does not formally test reproductive coordination or differences among coefficients.",
+      file.path(summary_dir, "Figure_summary_all_associations_caption.txt")
     )
   }
 
@@ -1591,8 +1597,8 @@ local({
   )
 
   # Refresh exports after all coefficient and bootstrap tables have been updated.
-  # Table S2: H7 results and H8 candidate-model comparisons -------------------------------
-  build_germination_table_s2 <- function(h7_file, h8_file, output_dir) {
+  # Auxiliary audit: H7 results and H8 candidate-model comparisons -------------------------------
+  build_germination_model_audit <- function(h7_file, h8_file, output_dir) {
     h7 <- utils::read.csv(h7_file, check.names = FALSE)
     h8 <- utils::read.csv(h8_file, check.names = FALSE)
     combined <- dplyr::bind_rows(
@@ -1616,8 +1622,8 @@ local({
     formatted <- format_candidate_table_export(combined)
     effects <- c("Estimate", "SE", "CI_low", "CI_high")
     formatted[effects] <- lapply(combined[effects], format_table_2_effect)
-    utils::write.csv(formatted, file.path(output_dir, "Table_S2.csv"), row.names = FALSE)
-    table <- build_publication_gt(combined, "S2", "H7 model results and H8 candidate models") |>
+    utils::write.csv(formatted, file.path(output_dir, "Table_H7_H8_model_audit.csv"), row.names = FALSE)
+    table <- build_publication_gt(combined, "H7_H8_model_audit", "H7 model results and H8 candidate models") |>
       gt::tab_source_note(gt::md(paste0(
         "H7 coefficients are per 100-m elevation increase. ",
         "H8 rows report candidate-model fit statistics, not coefficient estimates. ",
@@ -1625,14 +1631,14 @@ local({
       )))
     gt_dir <- file.path(output_dir, "gt")
     dir.create(gt_dir, showWarnings = FALSE)
-    gt::gtsave(table, file.path(gt_dir, "Table_S2.html"), inline_css = TRUE)
-    save_publication_table(table, file.path(gt_dir, "Table_S2.rtf"))
-    message("Table S2 saved: ", nrow(h7), " H7 rows and ", nrow(h8), " H8 rows.")
+    gt::gtsave(table, file.path(gt_dir, "Table_H7_H8_model_audit.html"), inline_css = TRUE)
+    save_publication_table(table, file.path(gt_dir, "Table_H7_H8_model_audit.rtf"))
+    message("H7-H8 model audit saved: ", nrow(h7), " H7 rows and ", nrow(h8), " H8 rows.")
     invisible(combined)
   }
-  # End of table s2: h7 results and h8 candidate-model comparisons.
+  # End of auxiliary audit: h7 results and h8 candidate-model comparisons.
 
-  build_germination_table_s2(
+  build_germination_model_audit(
     h7_model_results_file,
     file.path(table_dir_smg, "H8_candidate_models.csv"),
     table_dir_smg

@@ -183,7 +183,7 @@ plate <- magick::image_border(plate, color = "white", geometry = "8x8")
 
 # 7. Export plate and metadata -----------------------------------------------
 
-plate_base <- file.path(output_dir, "Figure_vegetation_zones_R")
+plate_base <- file.path(output_dir, "Figure_S1_vegetation_mount_kenya")
 magick::image_write(plate, paste0(plate_base, ".tiff"),
   format = "tiff",
   density = "600x600", compression = "lzw", quality = 100
@@ -208,4 +208,6 @@ file.copy(paste0(plate_base, ".tiff"), summary_tiff, overwrite = TRUE)
 
 message("Created Supplementary Figure S1 and eight converted TIFF photographs.")
 message("Combined TIFF: ", paste0(plate_base, ".tiff"))
-message("Caption: ", file.path(output_dir, "Figure_S1_caption.txt"))
+message("Caption: ", file.path(output_dir, "Figure_S1_vegetation_mount_kenya_caption.txt"))
+
+writeLines("Figure S1. Vegetation along the Mount Kenya transect. (a) Lower montane wet forest. (b) Upper montane forest-bamboo transition with Podocarpus spp., Hagenia abyssinica, Yushania alpina and Lobelia bambuseti. (c) Moorland with tussock grasses, sedges and Lobelia keniensis. (d) Wet Afro-alpine tussock grassland with young Lobelia rosettes. (e) Upper Afro-alpine grassland and wetland with giant rosette plants. (f) Upper Afro-alpine sedges (Carex spp.), grasses (Festuca spp.) and giant groundsels. (g) Transition to nival vegetation among boulders. (h) Sparse nival vegetation and scree. Photographs by Gerald Kenth Kaniaru.", paste0(plate_base, "_caption.txt"), useBytes = TRUE)

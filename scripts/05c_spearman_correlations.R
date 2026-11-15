@@ -3,7 +3,7 @@
 # Local definitions: this script never sources another R file.
 publication_root <- "outputs"
 publication_captions <- c(
-  Figure_S5 = "Figure S5. Spearman rank correlations among environmental variables and reproductive traits. Correlations involving 100-seed mass are restricted to the four germination components. Blank cells indicate untested pairs. Asterisks indicate Benjamini-Hochberg-adjusted P values: * <0.05, ** <0.01, *** <0.001."
+  Figure_S5 = "Figure S5. Spearman rank correlations between environmental variables and reproductive traits. Cells show Spearman\u2019s \u03c1. Green denotes positive and brown denotes negative correlations. Soil PC1 summarises standardised soil properties. Onset and duration refer to flowering. T0, time spread (Tg \u2013 T0), MGR and GP denote germination onset, spread, mean rate and percentage. Only the lower triangle is shown. Blank cells identify untested pairs: germination responses with MISM or total seed number, and 100-seed mass with variables other than the four germination responses. MISM is mean individual seed mass (mg per seed) and equals 100-seed mass divided by 100, giving a rank correlation of one by construction. Asterisks identify Benjamini-Hochberg-adjusted P values (*, P < 0.05; **, P < 0.01; ***, P < 0.001). Unmarked values have adjusted P \u2265 0.05."
 )
 publication_figure_exports <- function() {
   from <- file.path(publication_root, "diagnostics/figures/spearman_correlations")
@@ -221,7 +221,10 @@ correlation_results <- bind_rows(correlation_rows) |>
       Adjusted_P < .001 ~ "***", Adjusted_P < .01 ~ "**",
       Adjusted_P < .05 ~ "*", TRUE ~ ""
     ),
-    Label = paste0(sprintf("%.2f", Rho), Stars),
+    Label = if_else(
+      nzchar(Stars), paste0(sprintf("%.2f", Rho), "\n", Stars),
+      sprintf("%.2f", Rho)
+    ),
     Row = factor(Row, levels = rev(names(correlation_data))),
     Column = factor(Column, levels = names(correlation_data))
   )
@@ -243,13 +246,15 @@ label_correlations <- function(x) {
 }
 p_correlations <- ggplot(correlation_results, aes(Column, Row, fill = Rho)) +
   geom_tile(colour = "grey40") +
-  geom_text(aes(label = Label), size = 4, color = "black") +
+  geom_text(aes(label = Label), size = 4 + 3 / ggplot2::.pt,
+    hjust = 0.5, vjust = 0.5, lineheight = 0.95, color = "black"
+  ) +
   scale_fill_gradient2(low = "#79402E", mid = "white", high = "#235B38", limits = c(-1, 1)) +
   coord_equal() +
   labs(x = NULL, y = NULL, fill = "Spearman's Rho") +
   scale_x_discrete(labels = label_correlations) +
   scale_y_discrete(labels = label_correlations) +
-  theme_bw(base_size = 11, base_family = "Arial") +
+  theme_bw(base_size = 14, base_family = "Arial") +
   theme(panel.grid = element_blank(), axis.text.x = element_text(angle = 45, hjust = 1)) +
   theme(
     text = element_text(family = "Arial"),
@@ -257,14 +262,14 @@ p_correlations <- ggplot(correlation_results, aes(Column, Row, fill = Rho)) +
     legend.justification = c(1, 1),
     legend.background = element_rect(fill = "white", colour = NA),
     legend.title = element_text(
-      size = 12, face = "bold", color = "black",
+      size = 15, face = "bold", color = "black",
       margin = margin(b = 4, unit = "mm")
     ),
-    legend.text = element_text(size = 11, face = "plain", color = "black"),
-    axis.text.x = element_text(colour = "black", size = 12, face = "plain"),
-    axis.text.y = element_text(colour = "black", size = 12, face = "plain"),
-    axis.title = element_text(colour = "black", size = 12, face = "bold"),
-    plot.subtitle = element_text(colour = "black", size = 12, face = "bold"),
+    legend.text = element_text(size = 14, face = "plain", color = "black"),
+    axis.text.x = element_text(colour = "black", size = 15, face = "plain"),
+    axis.text.y = element_text(colour = "black", size = 15, face = "plain"),
+    axis.title = element_text(colour = "black", size = 15, face = "bold"),
+    plot.subtitle = element_text(colour = "black", size = 15, face = "bold"),
     plot.margin = margin(t = 1, r = 4, b = 1, l = 2, unit = "mm")
   )
 ggsave(file.path(source_diagnostic_figure_dir, "spearman_correlations.png"), p_correlations,

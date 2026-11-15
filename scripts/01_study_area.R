@@ -826,10 +826,10 @@ study_area_map <- study_area_map +
   )))
 study_area_map
 
-ggsave(file.path(out, "Figure_1_study_area_map_R.png"), study_area_map,
+ggsave(file.path(out, "Figure_1_study_area_mount_kenya.png"), study_area_map,
   width = 180, height = 150, units = "mm", dpi = 600, bg = "white"
 )
-ggsave(file.path(out, "Figure_1_study_area_map_R.tiff"), study_area_map,
+ggsave(file.path(out, "Figure_1_study_area_mount_kenya.tiff"), study_area_map,
   width = 180, height = 150, units = "mm", dpi = 600,
   compression = "lzw", bg = "white"
 )
@@ -838,9 +838,11 @@ ggsave(file.path(out, "Figure_1_study_area_map_R.tiff"), study_area_map,
 
 # Cairo cannot embed the Windows Arial CID font reliably. Build the
 # PDF from the 600-dpi Arial raster export to preserve typography.
-magick::image_read(file.path(out, "Figure_1_study_area_map_R.png")) |>
-  magick::image_write(file.path(out, "Figure_1_study_area_map_R.pdf"),
+magick::image_read(file.path(out, "Figure_1_study_area_mount_kenya.png")) |>
+  magick::image_write(file.path(out, "Figure_1_study_area_mount_kenya.pdf"),
     format = "pdf", density = 600
   )
 
 message("Created reference-style Figure 1 study-area map.")
+
+writeLines("Figure 1. Study area and sampling on Mount Kenya. (a) Mount Kenya in central Kenya, with Kenya shown within Africa in the inset. (b) Surrounding counties (GADM v4.1). (c) Vegetation zones from the VECEA potential natural vegetation map (van Breugel et al., 2015; Lilles\u00f8 et al., 2024), with the study area outlined by a dashed box. (d) Sampled plots along the elevational gradient. Grey lines mark 100-m contours from the approximately 30-m Copernicus DEM GLO-30 (European Space Agency & Airbus, 2022).", file.path(out, "Figure_1_study_area_mount_kenya_caption.txt"), useBytes = TRUE)

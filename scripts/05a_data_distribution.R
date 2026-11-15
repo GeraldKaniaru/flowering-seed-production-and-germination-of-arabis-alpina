@@ -3,7 +3,7 @@
 # Local definitions: this script never sources another R file.
 publication_root <- "outputs"
 publication_captions <- c(
-  Figure_S3 = "Figure S3. Distributions of environmental variables and reproductive traits. Histograms show density and black curves show smoothed density estimates. Yellow bars show original scales and grey bars natural-log scales. MISM is mean individual seed mass in mg per seed."
+  Figure_S3 = "Figure S3. Distributions of environmental predictors and reproductive traits. Histograms show densities and black curves show smoothed density estimates. Yellow bars indicate original scales and grey bars indicate natural-log scales. MISM is mean individual seed mass (mg per seed)."
 )
 publication_figure_exports <- function() {
   from <- file.path(publication_root, "diagnostics/data_distributions/distributions_all_variables")
